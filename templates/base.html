@@ -1,0 +1,25 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kevin Plunkett | Product Designer</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static "style.css" %}" />
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">	
+	<div class="nav">
+		<a href="/">
+			<div class="nav__logo"></div>
+		</a>
+	</div>
+	<div class="site_content">
+	{% block page_content %}{% endblock page_content %}
+	</div>
+</div>
+</body>
+</html>

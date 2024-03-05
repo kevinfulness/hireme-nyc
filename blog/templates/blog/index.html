@@ -1,0 +1,18 @@
+<!-- blog/templates/blog/index.html -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="page_title">
+	<h1>kevin plunkett is a product designer at meta reality labs</h1>
+</div>
+<div class="posts_list">
+	{% block posts %}
+	<ul>	
+		{% for post in posts %}
+		<li><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
+	{% endblock posts %}
+</div>
+{% endblock page_content %}

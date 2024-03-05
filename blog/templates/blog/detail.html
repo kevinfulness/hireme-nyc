@@ -1,0 +1,12 @@
+<!-- blog/templates/blog/detail.html -->
+
+{% extends "base.html" %}
+{% block page_content %}
+<div class="page_title">
+	<h1>{{ post.title }}</h1>
+</div>
+<div class="post_wrapper">
+	{{ post.body | safe }}
+	<!-- p>{{ post.body2 | linebreaks }}</p -->
+</div>
+{% endblock page_content %}

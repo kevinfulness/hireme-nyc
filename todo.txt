@@ -1,0 +1,3 @@
+breakpoints
+full-width scrolling
+export & upload images
