@@ -25,7 +25,6 @@ body{
 	background-size:cover;
 	background-attachment:fixed;
 }
-
 .nav{
 	position:fixed;
 	display:flex;
@@ -86,7 +85,7 @@ p{
 	max-width: 796px;
 }
 
-.page_title, .page_title h1 {
+.page_title h1 {
 	margin:0;
 }
 
@@ -101,7 +100,9 @@ p{
 	font-size:24px;
 	font-weight:800;
 }
-
+#detail_title{
+	max-width:796px;
+}
 /* phone */
 @media only screen and (max-width: 600px) {
 .nav {
@@ -111,13 +112,25 @@ p{
 	padding:148px 20px 20px;
 }
 p{
-	padding:0 20px 20px 20px;
+	padding:0 20px;
 }
 h3{
-	padding:20px 20px 10px 20px;
+	padding:0 20px;
+}
+div > img{
+	margin:20px 0;
+}
+.page_title{
+	margin:0 auto 20px;
 }
 .page_title h1{
 	font-size:60px;
+}
+#index_title{
+	max-width:100%;
+}
+#detail_title{
+	padding:0 20px;
 }
 }
 
@@ -130,13 +143,25 @@ h3{
 	padding:148px 50px 50px;
 }
 p{
-	padding:0 50px 50px 50px;
+	padding:0 50px;
 }
 h3{
-	padding:50px 50px 20px 50px;
+	padding:0px;
+}
+div > img{
+	margin:50px 0;
+}
+.page_title{
+	margin:0 auto 50px;
 }
 .page_title h1{
 	font-size:80px;
+}
+#index_title{
+	max-width:70vw;
+}
+#detail_title{
+	padding:0 50px;
 }
 }
 
@@ -149,14 +174,24 @@ h3{
 	padding:148px 50px 50px;
 }
 p{
-	padding:0 50px 50px 50px;
+	padding:0 50px;
 }
 h3{
-	padding:50px 50px 20px 50px;
+	padding:0 50px;
+}
+div > img{
+	margin:50px 0;
+}
+.page_title{
+	margin:0 auto 50px;
 }
 .page_title h1{
-	font-size:150px;
+	font-size:110px;
 }
+#index_title{
+	max-width:70vw;
 }
-
-
+#detail_title{
+	padding:0 50px;
+	max-width:796px;
+}
