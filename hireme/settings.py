@@ -21,13 +21,9 @@ env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_ROOT = BASE_DIR / 'media'
-PROJECT_DIR = BASE_DIR / 'hireme'
 MEDIA_URL = '/media/'
 
-environ.Env.read_env(PROJECT_DIR / '.env')
-env_file_path = PROJECT_DIR / '.env'
-if not env_file_path.exists():
-  raise ValueError(f"{env_file_path=} does not exists")
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
