@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("blog.urls")),
     path('ckeditor', include("ckeditor_uploader.urls")),
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images'))),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/'))),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 if settings.DEBUG:
