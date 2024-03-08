@@ -1,10 +1,10 @@
 <!-- blog/templates/blog/index.html -->
 
 {% extends "base.html" %}
-
-{% block styles % }
-	<link rel="stylesheet" href="{% static "index.css" %} />
-{% endblock %}
+{% load static %}
+{% block styles %}
+	<link rel="stylesheet" href="{% static "index.css" %}" />
+{% endblock styles %}
 
 {% block page_content %}
 

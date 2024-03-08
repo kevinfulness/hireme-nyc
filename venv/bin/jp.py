@@ -1,4 +1,4 @@
-#!/home/kevin/Code/hireme/venv/bin/python
+#!/home/kevin/Code/hireme-nyc/venv/bin/python
 
 import sys
 import json

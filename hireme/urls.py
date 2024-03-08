@@ -19,13 +19,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static 
-
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("blog.urls")),
     path('ckeditor', include("ckeditor_uploader.urls")),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('blog/static/images'))),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 if settings.DEBUG:

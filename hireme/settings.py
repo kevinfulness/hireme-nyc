@@ -2,6 +2,7 @@ from pathlib import Path
 import django_heroku
 import dj_database_url
 import environ
+import sys
 import os
 
 env = environ.Env()
@@ -15,7 +16,8 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 environ.Env.read_env()
 
 SECRET_KEY = env.str('SECRET_KEY')
-DEBUG = env.bool('DEBUG', default=False)
+#DEBUG = env.bool('DEBUG', default=False)
+DEBUG = (sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = ['hireme-nyc-500432b446dc.herokuapp.com', 'hireme.nyc']
 
@@ -111,8 +113,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+if DEBUG:
+    STATIC_URL = '/static/'
+else:
+    STATIC_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/static/'
 
-STATIC_URL = '/static/'
 STATIC_ROOT = 'static/'
 
 # Default primary key field type
@@ -120,8 +125,8 @@ STATIC_ROOT = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
 AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env.str('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = env.str('AWS_STORAGE_BUCKET_NAME')

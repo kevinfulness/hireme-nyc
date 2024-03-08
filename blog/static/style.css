@@ -125,12 +125,10 @@ div > img{
 }
 .page_title h1{
 	font-size:60px;
+	padding:0 20px;
 }
 #index_title{
 	max-width:100%;
-}
-#detail_title{
-	padding:0 20px;
 }
 }
 
@@ -156,12 +154,10 @@ div > img{
 }
 .page_title h1{
 	font-size:80px;
+	padding:0 50px;
 }
 #index_title{
 	max-width:70vw;
-}
-#detail_title{
-	padding:0 50px;
 }
 }
 
@@ -187,11 +183,8 @@ div > img{
 }
 .page_title h1{
 	font-size:110px;
+	padding:0 50px;
 }
 #index_title{
 	max-width:70vw;
-}
-#detail_title{
-	padding:0 50px;
-	max-width:796px;
 }
