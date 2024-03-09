@@ -1,7 +1,7 @@
 @font-face{
 	font-family:'Montserrat'
 }
-.page_title {
+.page_title ,.posts_list a:hover{
 	color:#7E5181;
 }
 .posts_list a, .nav, .nav__name, .post_wrapper{
@@ -114,6 +114,9 @@ p{
 p{
 	padding:0 20px;
 }
+h1{
+	font-weight:300;
+}
 h3{
 	padding:0 20px;
 }
@@ -121,17 +124,20 @@ div > img{
 	margin:20px 0;
 }
 .page_title{
-	margin:0 auto 20px;
 }
 .page_title h1{
 	font-size:60px;
-	padding:0 20px;
 }
 #index_title{
 	max-width:100%;
 }
+#detail_title{
+	margin:0 20px auto;
 }
-
+#detail_title h1{
+	padding:0 20px;
+}
+}
 /* tablet */
 @media only screen and (max-width: 992px) {
 .nav {
@@ -143,6 +149,10 @@ div > img{
 p{
 	padding:0 50px;
 }
+h1{
+	font-weight:100;
+}
+
 h3{
 	padding:0px;
 }
@@ -150,14 +160,19 @@ div > img{
 	margin:50px 0;
 }
 .page_title{
-	margin:0 auto 50px;
 }
 .page_title h1{
 	font-size:80px;
-	padding:0 50px;
 }
 #index_title{
 	max-width:70vw;
+	margin:0 auto 50px 0;
+}
+#detail_title{
+	margin:0 auto 50px;
+}
+#detail_title h1{
+	padding:0 50px;
 }
 }
 
@@ -172,6 +187,10 @@ div > img{
 p{
 	padding:0 50px;
 }
+h1{
+	font-weight:100;
+}
+
 h3{
 	padding:0 50px;
 }
@@ -179,12 +198,18 @@ div > img{
 	margin:50px 0;
 }
 .page_title{
-	margin:0 auto 50px;
 }
 .page_title h1{
 	font-size:110px;
-	padding:0 50px;
 }
 #index_title{
 	max-width:70vw;
+	margin:0 auto 50px 0;
 }
+#detail_title{
+	margin:0 auto 50px;
+}
+#detail_title h1{
+	padding:0 50px;
+}
+
