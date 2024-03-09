@@ -9,9 +9,7 @@ env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_URL = '/media/'
-CKEDITOR_UPLOAD_PATH = "uploads/"
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 environ.Env.read_env()
 
@@ -112,20 +110,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-STATIC_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/static/'
-
-STATIC_ROOT = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
 AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env.str('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = env.str('AWS_STORAGE_BUCKET_NAME')
@@ -134,3 +118,20 @@ AWS_S3_REGION_NAME = 'us-east-2'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_VERITY = True
+AWS_QUERYSTRING_AUTH = False
+
+# Static files (CSS, JavaScript, Images)
+#STATIC_ROOT = 'static/'
+STATIC_LOCATION = 'static'
+STATIC_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/static/'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
+STATICFILES_STORAGE = 'hireme.storage_backends.StaticStorage'
+
+# Media files
+#MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_LOCATION = 'media'
+MEDIA_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/media/'
+CKEDITOR_UPLOAD_PATH = 'media/'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'hireme.storage_backends.PublicMediaStorage'
+
