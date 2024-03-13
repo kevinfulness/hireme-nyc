@@ -108,11 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID')
@@ -139,4 +136,3 @@ MEDIA_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/media/'
 CKEDITOR_UPLOAD_PATH = 'media/'
 #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'hireme.storage_backends.PublicMediaStorage'
-
