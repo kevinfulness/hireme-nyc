@@ -14,7 +14,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 environ.Env.read_env()
 
 SECRET_KEY = env.str('SECRET_KEY')
-#DEBUG = env.bool('DEBUG', default=False)
+DEBUG = env.bool('DEBUG', default=False)
 DEBUG = (sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = [
@@ -87,16 +87,10 @@ DATABASES = {
         'PASSWORD': env.str('POSTGRES_PASSWORD'),
         'HOST': env.str('POSTGRES_HOST'),
         'PORT': '5432',
- #       'OPTIONS': {'sslmode': 'require'}       
     }
-
 }
 
 django_heroku.settings(locals())
-#del DATABASES['default']['OPTIONS']['sslmode']
-#db_from_env = dj_database_url.config(conn_max_age=600)
-#DATABASES['default'].update(db_from_env)
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -150,33 +144,3 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_UPLOAD_PREFIX = 'https://hireme-image.s3.us-east-2.amazonaws.com/'
 #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'hireme.storage_backends.PublicMediaStorage'
-
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
-
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        },
-        'console':{
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
-}
