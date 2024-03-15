@@ -18,8 +18,8 @@ DEBUG = env.bool('DEBUG', default=False)
 DEBUG = (sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = [
-    # 'localhost',
-    # '127.0.0.1',
+    'localhost',
+    '127.0.0.1',
     'hireme-nyc-500432b446dc.herokuapp.com',
     'hireme.nyc'
 ]
@@ -132,16 +132,19 @@ AWS_S3_VERITY = True
 AWS_QUERYSTRING_AUTH = False
 
 # Static files (CSS, JavaScript, Images)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_LOCATION = 'static'
 STATIC_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/static/'
-STATICFILES_STORAGE = 'hireme.storage_backends.StaticStorage'
+# STATICFILES_STORAGE = 'hireme.storage_backends.StaticStorage'
 
 # Media files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 MEDIA_LOCATION = 'media'
 MEDIA_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/media/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_UPLOAD_PREFIX = 'https://hireme-image.s3.us-east-2.amazonaws.com/'
-DEFAULT_FILE_STORAGE = 'hireme.storage_backends.PublicMediaStorage'
+# DEFAULT_FILE_STORAGE = 'hireme.storage_backends.PublicMediaStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 LOGGING = {
     'version': 1,
