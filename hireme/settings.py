@@ -18,10 +18,8 @@ DEBUG = env.bool('DEBUG', default=False)
 DEBUG = (sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
     'hireme-nyc-500432b446dc.herokuapp.com',
-    'hireme.nyc'
+    '.hireme.nyc',
 ]
 
 INSTALLED_APPS = [
@@ -45,7 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'hireme.urls'
