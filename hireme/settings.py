@@ -73,12 +73,6 @@ WSGI_APPLICATION = 'hireme.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASE_URL = env.str('DATABASE_URL')
-
-# DATBASES = {
-#        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -89,7 +83,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 django_heroku.settings(locals())
 
 # Password validation
@@ -130,17 +123,32 @@ AWS_S3_VERITY = True
 AWS_QUERYSTRING_AUTH = False
 
 # Static files (CSS, JavaScript, Images)
-#STATIC_ROOT = 'static/'
 STATIC_LOCATION = 'static'
 STATIC_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/static/'
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
 STATICFILES_STORAGE = 'hireme.storage_backends.StaticStorage'
 
 # Media files
-#MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_LOCATION = 'media'
 MEDIA_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/media/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_UPLOAD_PREFIX = 'https://hireme-image.s3.us-east-2.amazonaws.com/'
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'hireme.storage_backends.PublicMediaStorage'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
