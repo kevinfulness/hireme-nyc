@@ -85,10 +85,12 @@ WSGI_APPLICATION = 'hireme.wsgi.application'
     # }
 
 # }
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+DATABASE_URL = os.environ['DATABASE_URL']
+DATABASES = {
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True),
+}
 
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
