@@ -18,8 +18,8 @@ DEBUG = env.bool('DEBUG', default=False)
 DEBUG = (sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
+    # 'localhost',
+    # '127.0.0.1',
     'hireme-nyc-500432b446dc.herokuapp.com',
     'hireme.nyc'
 ]
@@ -73,22 +73,21 @@ WSGI_APPLICATION = 'hireme.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': env.str('POSTGRES_NAME'),
-    #     'USER': env.str('POSTGRES_USER'),
-    #     'PASSWORD': env.str('POSTGRES_PASSWORD'),
-    #     'HOST': env.str('POSTGRES_HOST'),
-    #     'OPTIONS': {'sslmode': 'require'}
-    #     'PORT': '5432',
-    # }
-
-# }
-DATABASE_URL = os.environ['DATABASE_URL']
 DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env.str('POSTGRES_NAME'),
+        'USER': env.str('POSTGRES_USER'),
+        'PASSWORD': env.str('POSTGRES_PASSWORD'),
+        'HOST': env.str('POSTGRES_HOST'),
+        'PORT': '5432',
+    }
+
 }
+# DATABASE_URL = env.str['DATABASE_URL']
+# DATABASES = {
+#     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True),
+# }
 
 django_heroku.settings(locals())
 # Password validation
