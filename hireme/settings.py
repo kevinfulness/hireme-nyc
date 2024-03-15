@@ -73,18 +73,22 @@ WSGI_APPLICATION = 'hireme.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env.str('POSTGRES_NAME'),
-        'USER': env.str('POSTGRES_USER'),
-        'PASSWORD': env.str('POSTGRES_PASSWORD'),
-        'HOST': env.str('POSTGRES_HOST'),
-        'PORT': '5432',
-    }
-}
-django_heroku.settings(locals())
+# DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': env.str('POSTGRES_NAME'),
+    #     'USER': env.str('POSTGRES_USER'),
+    #     'PASSWORD': env.str('POSTGRES_PASSWORD'),
+    #     'HOST': env.str('POSTGRES_HOST'),
+    #     'OPTIONS': {'sslmode': 'require'}
+    #     'PORT': '5432',
+    # }
 
+# }
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
+#django_heroku.settings(locals())
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
