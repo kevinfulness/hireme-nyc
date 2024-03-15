@@ -17,7 +17,12 @@ SECRET_KEY = env.str('SECRET_KEY')
 #DEBUG = env.bool('DEBUG', default=False)
 DEBUG = (sys.argv[1] == 'runserver')
 
-ALLOWED_HOSTS = ['hireme-nyc-500432b446dc.herokuapp.com', 'hireme.nyc']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'hireme-nyc-500432b446dc.herokuapp.com',
+    'hireme.nyc'
+]
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
@@ -68,6 +73,12 @@ WSGI_APPLICATION = 'hireme.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASE_URL = env.str('DATABASE_URL')
+
+# DATBASES = {
+#        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -76,7 +87,7 @@ DATABASES = {
         'PASSWORD': env.str('POSTGRES_PASSWORD'),
         'HOST': env.str('POSTGRES_HOST'),
         'PORT': '5432',
-#        'OPTIONS': {'sslmode': 'require'}
+ #       'OPTIONS': {'sslmode': 'require'}       
     }
 
 }
@@ -139,3 +150,33 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_UPLOAD_PREFIX = 'https://hireme-image.s3.us-east-2.amazonaws.com/'
 #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'hireme.storage_backends.PublicMediaStorage'
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'console':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}
