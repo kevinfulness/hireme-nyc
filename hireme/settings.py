@@ -89,11 +89,13 @@ WSGI_APPLICATION = 'hireme.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 
 #if 'ENGINE' in DATABASES['default'] and 'postgres' in DATABASES['default']['ENGINE']:
 #    DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
 
 # django_heroku.settings(locals())
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
