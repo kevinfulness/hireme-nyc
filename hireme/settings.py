@@ -18,6 +18,7 @@ DEBUG = env.bool('DEBUG', default=False)
 DEBUG = (sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = [
+#    'localhost',
     'hireme-nyc-500432b446dc.herokuapp.com',
     '.hireme.nyc',
     'hireme.nyc',
