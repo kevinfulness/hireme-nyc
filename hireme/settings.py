@@ -20,6 +20,7 @@ DEBUG = (sys.argv[1] == 'runserver')
 ALLOWED_HOSTS = [
     'hireme-nyc-500432b446dc.herokuapp.com',
     '.hireme.nyc',
+    'hireme.nyc',
 ]
 
 INSTALLED_APPS = [
