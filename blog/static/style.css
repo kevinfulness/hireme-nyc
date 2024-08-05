@@ -104,6 +104,8 @@ p{
 div > img{
 	box-shadow:0 5px 150px;
 }
+
+
 /* phone */
 @media only screen and (max-width: 600px) {
 .nav {
@@ -181,7 +183,6 @@ div > img{
 	font-size:80px;
 }
 #index_title{
-	max-width:70vw;
 	margin:0 auto 50px 0;
 }
 #detail_title{
@@ -223,10 +224,9 @@ div > img{
 .page_title{
 }
 .page_title h1{
-	font-size:110px;
+	font-size:86px;
 }
 #index_title{
-	max-width:70vw;
 	margin:0 auto 50px 0;
 }
 #detail_title{
