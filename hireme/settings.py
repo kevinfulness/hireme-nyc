@@ -6,19 +6,20 @@ import sys
 import os
 
 env = environ.Env()
+environ.Env.read_env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-environ.Env.read_env()
 
-SECRET_KEY = env.str('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 DEBUG = env.bool('DEBUG', default=False)
 DEBUG = (sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = [
-#    'localhost',
+    'localhost',
     'hireme-nyc-500432b446dc.herokuapp.com',
     '.hireme.nyc',
     'hireme.nyc',
@@ -73,19 +74,19 @@ WSGI_APPLICATION = 'hireme.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': env.str('POSTGRES_NAME'),
-#         'USER': env.str('POSTGRES_USER'),
-#         'PASSWORD': env.str('POSTGRES_PASSWORD'),
-#         'HOST': env.str('POSTGRES_HOST'),
-#         'PORT': '5432',
-#     }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': env.str('POSTGRES_NAME'),
+#        'USER': env.str('POSTGRES_USER'),
+#        'PASSWORD': env.str('POSTGRES_PASSWORD'),
+#        'HOST': env.str('POSTGRES_HOST'),
+#        'PORT': '5432',
+#    }
+#}
+#DATABASE_URL = os.environ.get('DATABASE_URL')
+#db_from_env = dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
 
-# }
-# DATABASE_URL = os.environ.get('DATABASE_URL')
-# db_from_env = dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600, ssl_require=True, default=os.environ['HEROKU_POSTGRESQL_PUCE_URL'])
 }
@@ -94,7 +95,7 @@ DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 #if 'ENGINE' in DATABASES['default'] and 'postgres' in DATABASES['default']['ENGINE']:
 #    DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

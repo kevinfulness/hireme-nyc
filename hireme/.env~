@@ -1,7 +1,0 @@
-DEBUG=False
-SECRET_KEY='_1+r_1h889%3t*h1g4v3z5tc*u)7$oq&2m-2ogj&lj*tn^2h7=
-'
-AWS_ACCESS_KEY_ID='REDACTED'
-AWS_SECRET_ACCESS_KEY='REDACTED'
-AWS_STORAGE_BUCKET_NAME='hireme-image'
-DATABASE_URL=sqlite:///db.sqlite3

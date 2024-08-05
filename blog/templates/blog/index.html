@@ -9,17 +9,17 @@
 {% block page_content %}
 
 <div class="page_title" id="index_title">
-	<h1>kevin plunkett is a product designer at meta reality labs</h1>
+	<h1>kevin plunkett designs digital products for user-centric companies</h1>
 </div>
 
 <div class="posts_list">
-	{% block posts %}
 	<ul>	
-		{% for post in posts %}
-		<li><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></li>
-		{% endfor %}
+		<li><a href="https://www.hireme.nyc/post/5/">Meta Reality Labs</a></li>
+		<li><a href="https://www.hireme.nyc/post/4/">Bethesda Softworks</a></li>
+		<li><a href="https://www.hireme.nyc/post/3/">Madison Square Garden</a></li>
+		<!-- li><a href="https://www.hireme.nyc/post/6/">NY Knicks</a></li>
+		<li><a href="https://www.hireme.nyc/post/7/">Vimeo Livestream</a></li -->
 	</ul>
-	{% endblock posts %}
 </div>
 
 {% endblock page_content %}
