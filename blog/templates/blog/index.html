@@ -13,13 +13,27 @@
 </div>
 
 <div class="posts_list">
-	<ul>	
-		<li><a href="https://www.hireme.nyc/post/5/">Meta Reality Labs</a></li>
+	{% if user.is_authenticated %}
+	<form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">Log out</button></form>
+	<strong>{{ user.username }}</strong>
+	{% endif %}
+
+		{% for post in posts %}
+		<a href="{% url 'blog_detail' post.pk %}">
+			<div class="post_item">
+				<div class="post_meta">
+					<h2>{{ post.title }}</h2>
+					<h4>{{ post.year }}</h4>
+				</div>
+				{{ post.bullets|safe }}
+			</div>
+		</a>
+		{% endfor %}
+		<!-- li><a href="https://www.hireme.nyc/post/5/">Meta Reality Labs</a></li>
 		<li><a href="https://www.hireme.nyc/post/4/">Bethesda Softworks</a></li>
 		<li><a href="https://www.hireme.nyc/post/3/">Madison Square Garden</a></li>
 		<li><a href="https://www.hireme.nyc/post/8/">NY Knicks</a></li>
-		<!-- li><a href="https://www.hireme.nyc/post/7/">Vimeo Livestream</a></li -->
-	</ul>
+		<li><a href="https://www.hireme.nyc/post/7/">Vimeo Livestream</a></li -->
 </div>
 
 {% endblock page_content %}

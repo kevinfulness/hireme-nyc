@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+	<div class="page_title">
+		<h1>password please</h1>
+	</div>
+	<div class="form_wrapper">
+		<form method="post">
+			{% csrf_token %}
+			{{ form.as_p}}
+			<button type="submit">Log in</button>
+		</form>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('id_username').value = 'default';
+		document.getElementById('id_username').placeholder = 'username';
+		document.getElementById('id_password').placeholder = 'password';
+	</script>
+{% endblock %}

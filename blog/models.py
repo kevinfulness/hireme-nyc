@@ -8,6 +8,8 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     body = RichTextUploadingField(blank=True, null=True)
     slug = models.SlugField(blank=True, null=True)
+    year = models.CharField(max_length=4, null=True)
+    bullets = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
         return self.title

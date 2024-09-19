@@ -1,5 +1,4 @@
 <!-- templates/base.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +10,10 @@
 	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="icon" href="{% static "images/favicon.ico" %}" type="image/x-icon" />
+
+	<script type="text/javascript">window.addEventListener("scroll", () => { document.body.style.setProperty("--scroll", window.pageYOffset / (document.body.offsetHeight - window.innerHeight));},false);</script>
 </head>
 <body>
-<script>0</script>
 <div class="wrapper">	
 	<div class="nav">
 		<a href="/">
@@ -21,7 +21,7 @@
 		</a>
 	</div>
 	<div class="site_content">
-	{% block page_content %}{% endblock page_content %}
+		{% block page_content %}{% endblock page_content %}
 	</div>
 </div>
 </body>
