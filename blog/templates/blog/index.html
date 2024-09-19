@@ -13,11 +13,6 @@
 </div>
 
 <div class="posts_list">
-	{% if user.is_authenticated %}
-	<form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">Log out</button></form>
-	<strong>{{ user.username }}</strong>
-	{% endif %}
-
 		{% for post in posts %}
 		<a href="{% url 'blog_detail' post.pk %}">
 			<div class="post_item">
@@ -29,6 +24,10 @@
 			</div>
 		</a>
 		{% endfor %}
+
+		{% if user.is_authenticated %}
+		<form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">Log out</button></form>
+		{% endif %}
 		<!-- li><a href="https://www.hireme.nyc/post/5/">Meta Reality Labs</a></li>
 		<li><a href="https://www.hireme.nyc/post/4/">Bethesda Softworks</a></li>
 		<li><a href="https://www.hireme.nyc/post/3/">Madison Square Garden</a></li>
