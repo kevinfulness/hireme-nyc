@@ -13,7 +13,7 @@
 </div>
 
 <div class="posts_list">
-		{% for post in posts %}
+		{% for post in posts|dictsortreversed:"year" %}
 		<a href="{% url 'blog_detail' post.pk %}">
 			<div class="post_item">
 				<div class="post_meta">
@@ -24,15 +24,6 @@
 			</div>
 		</a>
 		{% endfor %}
-
-		{% if user.is_authenticated %}
-		<form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">Log out</button></form>
-		{% endif %}
-		<!-- li><a href="https://www.hireme.nyc/post/5/">Meta Reality Labs</a></li>
-		<li><a href="https://www.hireme.nyc/post/4/">Bethesda Softworks</a></li>
-		<li><a href="https://www.hireme.nyc/post/3/">Madison Square Garden</a></li>
-		<li><a href="https://www.hireme.nyc/post/8/">NY Knicks</a></li>
-		<li><a href="https://www.hireme.nyc/post/7/">Vimeo Livestream</a></li -->
 </div>
 
 {% endblock page_content %}
