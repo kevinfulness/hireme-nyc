@@ -179,6 +179,18 @@ button:hover {
 .post_wrapper {
 	position: relative;
 	margin:0 auto;
+	/* max-width: 796px; */
+}
+.post_wrapper > div {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	width: 100%;
+}
+.post_wrapper > p,.post_wrapper > h3 {
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
 	max-width: 796px;
 }
 .page_title h1 {
@@ -230,7 +242,9 @@ button:hover {
 		padding:0 25px;
 	}
 	div > img{
-		margin:25px 0;
+		margin:25px auto;
+		height: auto; 
+		width: auto; 
 	}
 	.page_title{
 		margin:0 auto 25px;
@@ -273,8 +287,10 @@ button:hover {
 	.post_wrapper h3{
 		padding:0px 50px;
 	}
-	div > img{
-		margin:50px 0;
+	div > img {
+		margin:50px auto;
+		height: auto; 
+		width: auto; 
 	}
 	.page_title{
 		margin:0 auto 50px 0;
@@ -316,7 +332,9 @@ button:hover {
 		padding:0 50px;
 	}
 	div > img {
-		margin:50px 0;
+		margin:50px auto;
+		height: auto; 
+		width: auto; 
 	}
 	.page_title h1 {
 		font-size:56px;
