@@ -174,12 +174,14 @@ button:hover {
 	padding: 37px 25px;
 }
 .post_item:hover {
-	background-color: #DDD6DE;
+	background-color: #F4EBF5;
+}
+.post_item > p {
+	padding: 0;
 }
 .post_wrapper {
 	position: relative;
 	margin:0 auto;
-	/* max-width: 796px; */
 }
 .post_wrapper > div {
 	display: flex;
@@ -187,11 +189,16 @@ button:hover {
 	margin: 0 auto;
 	width: 100%;
 }
-.post_wrapper > p,.post_wrapper > h3 {
+.post_wrapper > p,.post_wrapper > h3, .post_wrapper > h2 {
 	box-sizing: border-box;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 796px;
+}
+div > img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
 }
 .page_title h1 {
 	font-weight: 200;
@@ -238,13 +245,14 @@ button:hover {
 		background-color: #DDD6DE;
 		margin-bottom: 12px;
 	}
-	.post_wrapper h3{
+	.post_wrapper h3, .post_wrapper h2 {
 		padding:0 25px;
+	}
+	.post_wrapper h2  {
+		margin-bottom: 18px;
 	}
 	div > img{
 		margin:25px auto;
-		height: auto; 
-		width: auto; 
 	}
 	.page_title{
 		margin:0 auto 25px;
@@ -284,16 +292,21 @@ button:hover {
 	h2 {
 		margin-top: 0;
 	}
-	.post_wrapper h3{
+	.post_wrapper h3, .post_wrapper h2 {
 		padding:0px 50px;
+	}
+	.post_wrapper h2  {
+		margin-bottom: 18px;
+	}
+	.post_item {
+		background-color: #DDD6DE;
+		margin-bottom: 25px;
 	}
 	div > img {
 		margin:50px auto;
-		height: auto; 
-		width: auto; 
 	}
 	.page_title{
-		margin:0 auto 50px 0;
+		margin:0 auto 100px 0;
 	}
 	.page_title h1{
 		font-size:56px;
@@ -305,9 +318,6 @@ button:hover {
 	#detail_title h1 {
 		padding: 0 50px;
 	}
-	#index_title {
-		margin:0 25px;
-	}
 }
 
 /* DESKTOP __________________________________________________________________________________________ */
@@ -317,7 +327,6 @@ button:hover {
 	}
 	.site_content{
 		margin: 148px auto 50px;
-		max-width: 70vw;
 	}
 	p {
 		padding:0 50px;
@@ -328,13 +337,30 @@ button:hover {
 	h2 {
 		margin-top: 0;
 	}
-	.post_wrapper h3 {
+	
+	.posts_list {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.post_wrapper {
+		max-width: 70vw;
+	}
+	.post_wrapper h2  {
+		margin-bottom: 18px;
+	}
+	.post_wrapper h3, .post_wrapper h2  {
 		padding:0 50px;
+	}
+	.post_item {
+		background-color: #DDD6DE;
+		margin-bottom: 25px;
 	}
 	div > img {
 		margin:50px auto;
-		height: auto; 
-		width: auto; 
+	}
+	.page_title{
+		max-width: 800px;
+		margin:0 auto 100px auto;
 	}
 	.page_title h1 {
 		font-size:56px;
@@ -346,8 +372,5 @@ button:hover {
 	}
 	#detail_title h1 {
 		padding: 0 50px;
-	}
-	#index_title {
-		margin:0 25px;
 	}
 }

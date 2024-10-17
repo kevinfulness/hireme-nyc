@@ -79,12 +79,11 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
         'toolbar_Custom': [
-            ['Styles', 'Format', 'Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-'],
-            ['Image', 'Link', 'Unlink'],
-            ['RemoveFormat', 'CodeSnippet'],
+            ['Format'],
+            ['NumberedList', 'BulletedList', '-'],
+            ['Image', 'html5video', 'Link', 'Unlink'],
         ],
-        'extraPlugins': 'codesnippet',
+        # 'extraPlugins': ['html5video']', 
     },
 }
 
