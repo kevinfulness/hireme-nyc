@@ -8,8 +8,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def blog_index(request):
     posts = Post.objects.all()
     return render(request, "blog/index.html", {
-            "posts": posts
-        })
+        "posts": posts
+    })
 
 def signup(request):
     if request.method == 'POST':
@@ -24,6 +24,12 @@ def signup(request):
         })
 
 @login_required
+def blog_work(request):
+    posts = Post.objects.all()
+    return render(request, "blog/work.html", {
+        "posts": posts
+    })
+    
 def blog_detail(request, pk):
     post = Post.objects.get(pk=pk)
     context = {

@@ -9,25 +9,42 @@
 {% block page_content %}
 
 <div class="page_title" id="index_title">
-	<h1>kevin plunkett designs digital products for wearables, mobile, and web</h1>
+	<h1>welcome to kevin plunkett’s website on the world wide web!</h1>
 </div>
 
-<div class="posts_list">
-		{% for post in posts|dictsortreversed:'year' %}
-		<a href="{% url 'blog_detail' post.pk %}">
-			<div class="post_item">
-				<div class="post_meta">
-					<h2>{{ post.title }}</h2>
-					<h4>{{ post.year }}</h4>
-				</div>
-				{{ post.bullets|safe }}
-			</div>
-		</a>
-		{% endfor %}
-
-		{% if user.is_authenticated %}
-		<form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">Log out</button></form>
-		{% endif %}
+<div class="about">
+	<p>
+		Over 10 years of experience designing digital products for <b>wearables, mobile, and web</b><br>
+		Lives in <b>Brooklyn NYC</b>, rides a <b>motorcycle</b>, cooks a mean <b>lasagna</b><br>
+	</p>
 </div>
+
+<div class="links">
+	<a href="{% url 'blog_work' %}"><button>work</button></a>
+	<button id="contact_button">contact</button>
+</div>
+<div class="modal" id="modal">
+	<div class="modal_content" id="modal_content">
+		<div class="close">&times;</div>
+		<h2>Get in touch</h2>
+		<p>Send me a message and I’ll respond as soon as possible!</p>
+		<div id="form_success" style="display: none;"><h2>Success!</h2></div>
+		<form action="https://api.web3forms.com/submit" method="POST" id="contact_form">
+		    <input type="hidden" name="access_key" value="3f3a091c-6fdb-4c81-95bc-9001b3d42ab6">
+		    <input type="text" placeholder="Name" name="name" required>
+		    <input type="email" placeholder="Email address" name="email">
+			<input type="phone" placeholder="Phone number" name="phone">
+			<textarea placeholder="Message" name="message" required></textarea>
+		    <!-- Honeypot Spam Protection -->
+		    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+		    <!-- Custom Confirmation / Success Page -->
+		    <input type="hidden" name="redirect" value="thanks.html">
+			<button type="submit" id="send_button">Send</button>
+		</form>		
+	</div>
+</div>
+<script type="text/javascript">
+
+</script>
 
 {% endblock page_content %}

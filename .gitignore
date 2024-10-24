@@ -1,7 +1,6 @@
 .env
 db.sqlite3
 /static
-/blog/static
 /media
 __pycache__
 venv/
