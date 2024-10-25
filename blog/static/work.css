@@ -7,6 +7,7 @@ h2 {
 }
 .post_item {
 	border-radius: 25px;
+	overflow: hidden;
 	transition: background-color 0.5s;	
 }
 .post_item:hover {
@@ -15,10 +16,6 @@ h2 {
 .post_item > p {
 	padding: 0;
 	margin: 0;
-}
-.post_thumbnail > img {
-	width: 100%;
-	border-radius: 25px;
 }
 .post_meta {
 	padding: 25px;
@@ -29,6 +26,10 @@ h2 {
 }
 .post_thumbnail {
 	margin:0px;
+}
+.post_thumbnail__image {
+	width: 100%;
+	border-radius: 25px;
 }
 .posts_list ul {
 	margin:0;
