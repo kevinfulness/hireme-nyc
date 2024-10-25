@@ -3,7 +3,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block styles %}
-	<link rel="stylesheet" href="{% static "work.css" %}" />
+	<link rel="stylesheet" href="{% static "detail.css" %}" />
 {% endblock styles %}
 
 {% block page_content %}
@@ -15,5 +15,14 @@
 <div class="post_wrapper">
 	{{ post.body | safe }}
 </div>
+
+
+<div class="lightbox">
+	<div class="lightbox_content">
+		<h3 class="lightbox_close">&times;</h3>
+		<div class="lightbox_image__container"></div>
+	</div>
+</div>
+
 
 {% endblock page_content %}

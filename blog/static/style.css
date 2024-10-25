@@ -4,15 +4,52 @@
 .page_title, h4 {
 	color:#7E5181;
 }
-a,p, h2, .nav, .nav__name, .post_wrapper, .close {
+a,p, h2, li, button, .nav, .nav__name, .post_wrapper, .close {
 	color:#4D415F;
 }
+body, h2, h4, p, ul {
+	margin: 0;
+}
 body{
-	margin:0;
 	padding:0;
 	width:100%;
 	height:100%;
 	font-family:"Montserrat";
+	overflow-x: hidden;
+}
+h1{
+	font-weight:200;
+	text-transform:lowercase;
+}
+h4, li, p {
+	font-weight: 400;
+}
+h2, button, .close {
+	font-weight: 600;
+}
+h3 {
+	text-transform: uppercase;
+}
+ul{
+	padding-left:20px;
+}
+li{
+	margin-bottom: 16px;
+	font-size: 18px;
+}
+a {
+	text-decoration: none;
+}
+button {
+	padding: 10px 20px;
+	border-radius: 10px;
+	font-family:"Montserrat";
+	background-color: #C08EC2;
+	border-style: none;
+	transition: background-color 0.5s;
+}
+button:hover {
+	background-color: #7E5181;
 }
 .wrapper{
 	display: flex;
@@ -22,7 +59,6 @@ body{
 	height: 100%;
 	min-height: 100vh;
 	box-sizing: border-box;
-	overflow-x: hidden;
 	background-image: linear-gradient(45deg, #E6E3E6, #B7A1B8);
 	background-size:cover;
 	background-attachment:fixed;
@@ -33,7 +69,6 @@ body{
 	max-width:100%;
 	min-height:100%;
 	box-sizing: border-box;
-	overflow-x: hidden;
 	margin:auto;
 }
 .nav{
@@ -80,185 +115,6 @@ body{
 		background-color: rgba(221,214,222,0.9);		
 	}
 }
-.links {
-	display: flex;
-	box-sizing: border-box;
-	width: 100%;
-}
-h1{
-	font-weight:100;
-	text-transform:lowercase;
-}
-h2, h4 {
-	margin: 0;
-}
-h2, .close {
-	font-weight: 600;
-}
-h4 {
-	font-weight: 400;
-}
-h3 {
-	text-transform: uppercase;
-}
-ul{
-	margin:0;
-	padding-left:20px;
-}
-li{
-	margin-bottom: 16px;
-	color: #4D415F;
-	font-size: 18px;
-	font-weight: 400;
-}
-a {
-	text-decoration: none;
-}
-p{
-	font-weight:400;
-	margin:0;
-}
-form {
-
-}
-form>p {
-	padding: 0;
-}
-input, textarea {
-	box-sizing: border-box;
-	padding: 10px 20px;
-	margin-bottom: 10px;
-	border-radius: 10px;
-	outline: none;
-	font-weight: 400;
-	font-family:"Montserrat";
-	color: #4D415F;
-	background-color: #FFF;
-	border: none;
-}
-input:focus, textarea:focus {
-	border: 2px solid #C08EC2;
-}
-input[name="username"] {
-	display: none;
-}
-input::placeholder, textarea::placeholder {
-	color: #C08EC2;
-}
-label {
-	display: none;
-}
-button {
-	padding: 10px 20px;
-	border-radius: 10px;
-	font-weight: 600;
-	font-family:"Montserrat";
-	color: #4D415F;
-	background-color: #C08EC2;
-	border-style: none;
-	transition: background-color 0.5s;
-}
-button:hover {
-	background-color: #7E5181;
-}
-.form_wrapper > button[type="submit"] {
-	max-width: 640px;
-	min-width: 340px;
-}
-
-.post_item {
-	border-radius: 25px;
-	transition: background-color 0.5s;	
-}
-.post_item:hover {
-	background-color: #F4EBF5;
-}
-.post_item > p {
-	padding: 0;
-}
-.post_wrapper {
-	position: relative;
-	margin:0 auto;
-}
-.post_wrapper > div {
-	display: flex;
-	align-items: center;
-	margin: 0 auto;
-	width: 100%;
-}
-.post_wrapper > p,.post_wrapper > h3, .post_wrapper > h2 {
-	box-sizing: border-box;
-}
-.post_wrapper > div > img {
-	width: auto;
-	height: auto;
-	max-width: 100%;
-	border-radius: 20px;
-}
-.post_image > img {
-	width: 100%;
-	border-radius: 25px;
-}
-.page_title h1 {
-	font-weight: 200;
-}
-.post_meta {
-	padding: 25px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
-}
-.post_image {
-	margin:0px;
-}
-.posts_list ul {
-	margin:0;
-}
-.posts_list li a{
-	text-decoration:none;
-	font-size:24px;
-	font-weight:800;
-}
-#detail_title{
-	max-width:796px;
-}
-
-.modal {
-	display: none;
-	position: fixed;
-	flex-direction: column;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.4);
-}
-.modal_content {
-	position: relative;
-	border-radius: 25px;
-	box-sizing: border-box;
-	background-color: #F4EBF5;
-	min-width: 150px;
-}
-.close {
-	float: right;
-	font-weight: bold;
-		line-height: 0;
-}
-.close:hover, .close:focus {
-	color:#4D415F;
-	text-decoration: none;
-	cursor: pointer;
-}
-#contact_form {
-	display: flex;
-	flex-direction: column;
-}
-#contact_form > input, #contact_form > textarea {
-	min-width: 100%;
-}
 
 /* PHONE __________________________________________________________________________________________ */
 @media only screen and (max-width: 768px) {
@@ -282,79 +138,14 @@ button:hover {
 		font-size: 32px;
 		line-height: 72px;
 	}
-	.links {
-		gap: 25px;
-	}
-	.about {
-		max-width: 100%;
-		margin: 0 0 25px;
-	}
-	.about p {
-		padding:0;	
-	}
-	.posts_list {
-		margin-top: 50px;
-	}
-	.post_item {
-		background-color: #DDD6DE;
-		margin-bottom: 12px;
-	}
-	.post_wrapper h3, .post_wrapper h2 {
-		padding:0;
-	}
-	.post_wrapper h2  {
-		margin-bottom: 18px;
-	}
-	.post_wrapper p{
-		padding:0;
-		margin: 0;
-	}
-	.post_wrapper > div > img {
-		margin:25px auto;
+	.page_title {
+		max-width:100%;
+		margin:0;
 	}
 	.page_title h1{
 		font-size:96px;
 		font-weight: 400;
-	}
-	#index_title{
-		max-width:100%;
-		margin:0;
-	}
-	#detail_title{
-		padding:0 0 25px;
-	}
-	#index_title h1, #detail_title h1 {
 		padding: 0;
-	}
-	.form_wrapper {
-		margin: 0 auto;
-		max-width: 100%;
-	}
-	input, textarea {
-		padding: 10px 20px;
-		margin-bottom: 10px;
-		border-radius: 10px;
-		max-width: 600px;
-		min-width: 300px;
-		font-size: 18px;
-	}
-	.modal {
-		justify-content: flex-end;
-	}
-	.modal_content {
-		margin: 30% auto;
-		padding: 50px;
-		min-width: 100%;
-	}
-	.modal_content h2 {
-		font-size: 48px;
-		margin-bottom: 8px;
-	}
-	.modal_content p {
-		margin-bottom: 48px;
-	}
-	.close {
-		font-size: 28px;
 	}
 }
 
@@ -382,81 +173,13 @@ button:hover {
 		font-size: 32px;
 		line-height: 72px;
 	}
-	.links {
-		gap: 25px;
-	}
-	.about {
-		max-width: 100%;
-		margin: 0 0 50px;
-	}
-	.about p {
-		padding:0;	
-	}
-	.posts_list {
-		margin-top: 50px;
-	}
-	.post_wrapper h3, .post_wrapper h2 {
-		padding: 0;
-		margin: 0 0 24px;
-	}
-	.post_wrapper h2  {
-		margin-bottom: 18px;
-	}
-	.post_wrapper p{
-		padding:0;
-		margin: 0;
-	}
-	.post_item {
-		background-color: #DDD6DE;
-		margin-bottom: 25px;
-	}
-	.post_wrapper > div > img {
-		margin:50px auto;
+	.page_title {
+		max-width:796px;
 	}
 	.page_title h1{
 		font-size:96px;
 		font-weight: 400;
-	}
-	#index_title{
-		max-width:100%;
-		margin:0;
-	}
-	#detail_title {
-		margin: 0 0 50px;
-	}
-	#index_title h1, #detail_title h1 {
 		padding: 0;
-	}
-	.form_wrapper {
-		margin: 0 auto;
-		max-width: 100%;
-	}
-	.form_wrapper > form > button {
-		min-width: 100%;
-	}
-	input, textarea {
-		padding: 25px;
-		margin-bottom: 25px;
-		border-radius: 25px;
-		min-width: 100%;
-		font-size: 56px;
-	}
-	.modal {
-		justify-content: flex-end;
-	}
-	.modal_content {
-		margin: 0 auto;
-		padding: 50px;
-		min-width: 100%;
-	}
-	.modal_content h2 {
-		margin-bottom: 8px;
-	}
-	.modal_content p {
-		margin-bottom: 48px;
-	}
-	.close {
-		font-size: 72px;
 	}
 }
 
@@ -484,90 +207,12 @@ button:hover {
 		font-size: 18px;
 		line-height: 36px;
 	}
-	.links {
-		max-width: 796px;
-		gap: 12px;
-		padding: 0 50px;
-	}
-	.about {
-		max-width: 800px;
-		margin: 0 auto 25px;
-	}
-	.about p {
-		padding:0 50px;	
-	}
-	.posts_list, .links {
-		max-width: 800px;
-		margin: 0 auto;
-	}
-	.post_wrapper {
-		max-width: 70vw;
-	}
-	.post_wrapper p {
-		padding:0 50px;
-		margin: 0 auto;
-		max-width: 796px;
-	}
-	.post_wrapper h3, .post_wrapper h2  {
-		padding:0 50px;
-		margin: 0 auto 25px;
-		max-width: 796px;
-	}
-
-	.post_item {
-		background-color: #DDD6DE;
-		margin: 0 0 25px;
-	}
-	.post_wrapper > div > img {
-		margin:50px auto;
+	.page_title {
+		max-width:796px;
 	}
 	.page_title h1 {
 		font-size:56px;
 		font-weight: 400;
-	}
-	#index_title{
-		max-width:796px;
-		margin:0 auto;
-	}
-	#detail_title {
-		margin: 0 auto 50px;
-		max-width:796px;
-	}
-	#index_title h1, #detail_title h1 {
 		padding: 0 50px;
-	}
-	.form_wrapper {
-		margin: 0 auto;
-		max-width: 800px;
-	}
-	.form_wrapper > form > button {
-		max-width: 600px;
-		min-width: 300px;
-	}
-	input, textarea {
-		padding: 10px 20px;
-		margin-bottom: 12px;
-		border-radius: 10px;
-		max-width: 600px;
-		min-width: 300px;
-		font-size: 18px;
-	}
-	.modal {
-		justify-content: center;
-	}
-	.modal_content {
-		margin: 30% auto;
-		padding: 50px;
-		min-width: 300px;
-		max-width: 798px;
-	}
-	.modal_content h2 {
-		margin-bottom: 4px;
-	}
-	.modal_content p {
-		margin-bottom: 24px;
-	}
-	.close {
-		font-size: 36px;
 	}
 }

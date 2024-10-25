@@ -75,14 +75,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'Custom',
+#         'toolbar_Custom': [
+#             ['Format'],
+#             ['NumberedList', 'BulletedList', '-'],
+#             ['Image', 'html5video', 'Link', 'Unlink'],
+#         ],
+#         'width': 800,
+#         # 'extraPlugins': ['html5video']', 
+#     },
+# }
+
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Format'],
-            ['NumberedList', 'BulletedList', '-'],
-            ['Image', 'html5video', 'Link', 'Unlink'],
-        ],
+        'toolbar': 'full',
+        'width': 1200,
         # 'extraPlugins': ['html5video']', 
     },
 }
