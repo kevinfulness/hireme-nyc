@@ -8,7 +8,9 @@ $(document).ready(function(){
   $(".menu_button").click(function(){
     $(".menu").fadeIn(150);
   });
-
+  $(".work_nav__item").click(function(){
+    $(".menu").fadeOut(150);
+  });
   // Contact Modal
   if (window.matchMedia("(min-width: 993px)").matches) {
     $(".modal_content").css('top', '0');

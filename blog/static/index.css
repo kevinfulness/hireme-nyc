@@ -106,6 +106,9 @@ nav {
 	height: 100vh;
 	background-color: #4D415F;
 }
+.menu_content {
+	overflow-y: auto;
+}
 .work_nav__list {
 	padding: 0;
 }
@@ -207,7 +210,8 @@ nav {
 		padding: 50px;
 	}
 	.menu_content {
-		padding: 0 50px;
+		padding: 200px 50px 50px;
+		max-height: 100%;
 	}
 	.work_nav__item a {
 		font-size: 64px;
@@ -280,7 +284,8 @@ nav {
 		padding: 50px;
 	}
 	.menu_content {
-		padding: 0 50px;
+		padding: 200px 50px 50px;
+		max-height: 100%;
 	}
 	.work_nav__item a {
 		font-size: 64px;
@@ -345,8 +350,9 @@ nav {
 		padding: 50px;
 	}
 	.menu_content, .modal_content {
-		padding: 0;
+		padding: 150px 0;
 		margin-left: 150px;
+		max-height: 100%;
 	}
 	.menu_button, .modal_close {
 		width: 22px;

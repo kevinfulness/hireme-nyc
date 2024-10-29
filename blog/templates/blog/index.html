@@ -17,7 +17,6 @@
 		<div class="nav_logo"></div>
 	</a>
 	{% if user.is_authenticated %}
-
 	<div class="right">
 		<div class="menu_button"></div>
 	</div>
@@ -58,7 +57,7 @@
 				{% for post in posts|dictsortreversed:'year' %}
 					<div class="post_wrapper">
 						<div class="post_title">
-							<h1>{{ post.title }}</h1>
+							<h1 id="{{ post.title }}">{{ post.title }}</h1>
 						</div>
 						<div class="post_meta">
 							<div class="post_meta__item">
@@ -133,7 +132,7 @@
 	{% if user.is_authenticated %}
 		<ul class="work_nav__list">
 		{% for post in posts|dictsortreversed:'year' %}
-			<li class="work_nav__item"><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></li>
+			<li class="work_nav__item"><a href="#{{ post.title }}">{{ post.title }}</a></li>
 		{% endfor %}
 		</ul>
 		<form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">log out</button></form>
