@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from blog.models import Post
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -7,8 +8,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 def blog_index(request):
     posts = Post.objects.all()
+    login_form = AuthenticationForm() if not request.user.is_authenticated else None
     return render(request, "blog/index.html", {
-        "posts": posts
+        "posts": posts,
+        'form': login_form,
     })
 
 def signup(request):

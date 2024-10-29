@@ -1,8 +1,24 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block styles %}
+	<link rel="stylesheet" href="{% static "index.css" %}" />
+	<link rel="stylesheet" href="{% static "detail.css" %}" />
+{% endblock styles %}
 
 {% block page_content %}
 
-	<div class="page_title">
+<nav class="nav">
+	<a href="/" class="nav_logo__link">
+		<div class="nav_logo"></div>
+	</a>
+</nav>
+
+<div class="site_content">
+
+<section class="login">
+	<div class="post_title">
 		<h1>password please</h1>
 	</div>
 	<div class="form_wrapper">
@@ -12,6 +28,9 @@
 			<button type="submit">Log in</button>
 		</form>
 	</div>
+</section>
+</div>
+	
 	<script type="text/javascript">
 		document.getElementById('id_username').value = 'default';
 		document.getElementById('id_username').placeholder = 'username';

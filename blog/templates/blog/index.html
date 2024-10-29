@@ -4,30 +4,100 @@
 {% load static %}
 {% block styles %}
 	<link rel="stylesheet" href="{% static "index.css" %}" />
+	<link rel="stylesheet" href="{% static "detail.css" %}" />
 {% endblock styles %}
 
 {% block page_content %}
 
-<div class="page_title" id="index_title">
-	<h1>welcome to kevin plunkett’s website on the world wide web!</h1>
-</div>
+<!-- NAV -->
+<!-- NAV -->
+<!-- NAV -->
+<nav class="nav">
+	<a href="/" class="nav_logo__link">
+		<div class="nav_logo"></div>
+	</a>
+	{% if user.is_authenticated %}
 
-<div class="about">
-	<p>
-		Over 10 years of experience designing digital products for <b>wearables, mobile, and web</b><br>
-		Lives in <b>Brooklyn NYC</b>, rides a <b>motorcycle</b>, cooks a mean <b>lasagna</b><br>
-	</p>
-</div>
+	<div class="right">
+		<div class="menu_button"></div>
+	</div>
+	{% endif %}
+</nav>
 
-<div class="links">
-	<a href="{% url 'blog_work' %}"><button>work</button></a>
-	<button id="contact_button">contact</button>
-</div>
-<div class="modal" id="modal">
-	<div class="modal_content" id="modal_content">
-		<div class="modal_close">&times;</div>
-		<h2>Get in touch</h2>
-		<p>Send me a message and I’ll respond as soon as possible!</p>
+<div class="site_content">
+
+<!-- HOME -->
+<!-- HOME -->
+<!-- HOME -->
+<section class="home">
+	<div class="page_title">
+		<h1>welcome to kevin plunkett’s website on the world wide web!</h1>
+	</div>
+	<div class="about">
+		<p>
+			Over 10 years of experience designing digital products for <b>wearables, mobile, and web</b><br>
+			Lives in <b>Brooklyn NYC</b>, rides a <b>motorcycle</b>, cooks a mean <b>lasagna</b><br>
+		</p>
+	</div>
+
+	<div class="links">
+		{% if user.is_authenticated %}
+			<a href="#work"><button id="work_button">work</button></a>
+		{% else %}
+			<a href="{% url 'login' %}"><button id="work_button">work</button></a>
+		{% endif %}
+		<button id="contact_button">get in touch</button>
+	</div>
+</section>
+
+<!-- WORK -->
+<!-- WORK -->
+<!-- WORK -->
+	<section class="work" id="work">
+		{% if user.is_authenticated %}
+				{% for post in posts|dictsortreversed:'year' %}
+					<div class="post_wrapper">
+						<div class="post_title">
+							<h1>{{ post.title }}</h1>
+						</div>
+						<div class="post_meta">
+							<div class="post_meta__item">
+								<span class="post_meta__eyebrow">Company</span>
+								<span class="post_meta__label">{{ post.company }}</span>
+							</div>
+							<div class="post_meta__item">
+								<span class="post_meta__eyebrow">Year</span>
+								<span class="post_meta__label">{{post.year }}</span>
+							</div>
+							<div class="post_meta__item">
+								<span class="post_meta__eyebrow">Role</span>
+								<span class="post_meta__label">{{ post.role }}</span>
+							</div>
+							<div class="post_meta__item">
+								<span class="post_meta__eyebrow">Surface</span>
+								<span class="post_meta__label">{{ post.surface }}</span>
+							</div>
+						</div>
+						<div class="post_body">
+							{{ post.body | safe }}
+						</div>
+					</div>
+				{% endfor %}
+		{% endif %}
+	</section>
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+<!-- CONTACT -->
+<div class="modal">
+	{% include "blog/menu_nav.html" %}
+	<section class="modal_content">
+		<div class="modal_copy">
+			<div class="modal_title">
+				<h1>Get in touch</h1>
+			</div>
+			<p>Send me a message and I’ll respond as soon as possible!</p>
+		</div>
 		<div id="form_success" style="display: none;"><h2>Success!</h2></div>
 		<form action="https://api.web3forms.com/submit" method="POST" id="contact_form">
 		    <input type="hidden" name="access_key" value="3f3a091c-6fdb-4c81-95bc-9001b3d42ab6">
@@ -41,10 +111,38 @@
 		    <input type="hidden" name="redirect" value="thanks.html">
 			<button type="submit" id="send_button">Send</button>
 		</form>		
+	</section>
+</div>
+
+<!-- LIGHTBOX -->
+<!-- LIGHTBOX -->
+<!-- LIGHTBOX -->
+<div class="lightbox">
+	{% include "blog/menu_nav.html" %}
+	<div class="lightbox_content">
+		<div class="lightbox_image__container"></div>
 	</div>
 </div>
-<script type="text/javascript">
 
-</script>
+<!-- MENU -->
+<!-- MENU -->
+<!-- MENU -->
+<div class="menu">
+	{% include "blog/menu_nav.html" %}
+	<section class="menu_content">
+	{% if user.is_authenticated %}
+		<ul class="work_nav__list">
+		{% for post in posts|dictsortreversed:'year' %}
+			<li class="work_nav__item"><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></li>
+		{% endfor %}
+		</ul>
+		<form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">log out</button></form>
+	{% else %}
+		<a href="{% url 'login' %}"><button id="work_button">work</button></a>
+	{% endif %}
+	</section>
+</div>
+
+</div>
 
 {% endblock page_content %}
