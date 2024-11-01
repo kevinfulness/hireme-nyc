@@ -1,0 +1,225 @@
+@include colors
+@include mixins
+
+.work, .post_wrapper, .post_body, .post_meta__item, .lightbox_content
+	@include flex-column
+.post_wrapper, .post_body, .post_meta, .post_image, .lightbox_content
+	max-width: 100%
+.post_wrapper, .post_body
+	position: relative
+.post_meta 
+	@include flex-row
+	gap: 100px
+.post_meta__item
+	gap: 12px
+.post_body
+	gap: 25px
+.post_body > p,.post_body > h3, .post_body > h2
+	box-sizing: border-box
+.post_body > div
+	background-color: $dark-urple
+	height: fit-content
+	width: fit-content
+	max-width: 1515px
+	overflow: hidden
+	padding: 25px
+.post_image
+	width: auto
+	height: auto
+	cursor: pointer
+.lightbox 
+	display: none
+	position: fixed
+	flex-direction: column
+	z-index: 1
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background-color: $dark-urple
+.lightbox_content
+	position: relative
+	width: fit-content
+	box-sizing: border-box
+	justify-content: center
+	overflow: auto
+.lightbox_image__container
+	max-height: 100%
+.lightbox_image
+	width: auto
+.lightbox_close
+	float: right
+	line-height: 0
+	margin: 0 0 25px auto
+	&:hover, &:focus
+		text-decoration: none
+		cursor: pointer
+
+/* PHONE __________________________________________________________________________________________ */
+@media only screen and (max-width: 768px)
+	.post_wrapper
+		gap: 50px
+	.post_wrapper
+		margin-right: 25px
+	.post_title
+		margin: 0 0 0 50px
+		max-width:100%
+		padding: 0
+		h1
+			margin: 0			
+	.post_meta
+		margin: 0
+		flex-wrap: wrap
+		gap: 50px
+	.post_body
+		h3, h2
+			margin: 0 0 24px
+		p
+			margin: 0
+
+	.post_image
+		margin:50px auto
+		max-height: 400px
+	.lightbox
+		justify-content: flex-end
+	.lightbox_content
+		margin: 25px auto
+		padding: 50px
+		max-height: calc(100vh - 50px)
+	.lightbox_content p
+		margin-bottom: 48px
+	.lightbox_image
+		max-width: auto
+	.lightbox_image__container
+		width: 100%
+
+/* TABLET __________________________________________________________________________________________ */
+@media only screen and (min-width: 769px) {
+	.work {
+		gap: 50px;
+	}
+	.post_wrapper {
+		margin-right: 25px;
+		gap: 100px;
+	}
+	.post_title {
+		margin: 0;
+		max-width:100%;
+	}
+	.post_title h1{
+		font-size:96px;
+	}	
+	.post_meta {
+		margin: 0;
+		flex-wrap: wrap;
+		gap: 50px;
+	}
+	.post_meta__eyebrow {
+		font-size: 24px;
+	}
+	.post_meta__label {
+		font-size: 36px;
+	}
+	.post_body h3, .post_body h2 {
+		margin: 0 0 24px;
+	}
+	.post_body p {
+		margin: 0;
+	}
+	.post_image {
+		margin:50px auto;
+		max-height: 600px;
+	}
+	.lightbox {
+		justify-content: flex-end;
+	}
+	.lightbox_content {
+		margin: 0px auto;
+		height: 100%;
+		min-height: calc(100vh - 250px);
+	}
+	.lightbox_content h2 {
+		margin-bottom: 8px;
+	}
+	.lightbox_content p {
+		margin-bottom: 48px;
+	}
+	.lightbox_image__container {
+		width: 100%;
+		min-height: fit-content;
+		max-height: 100%;
+	}
+	.lightbox_image {
+		max-width: auto;
+		min-height: 100%;
+		padding: 0 50px;
+	}
+}
+
+/* DESKTOP __________________________________________________________________________________________ */
+@media only screen and (min-width: 993px) {
+	.work {
+		gap: 100px;
+	}
+	.post_wrapper {
+		margin-right: 25px;
+		gap: 25px;
+	}
+	.post_title {
+		margin: 0 auto 0 100px;
+		max-width: 100%;
+	}
+	.post_title h1 {
+		font-size:56px;
+	}
+	.post_meta {
+		margin: 25px auto 25px 100px;
+		max-width: 100%;
+	}
+	.post_meta {
+		flex-wrap: nowrap;
+		gap: 50px;
+	}
+	.post_meta__eyebrow {
+		font-size: 12px;
+	}
+	.post_meta__label {
+		font-size: 18px;
+	}
+	.post_body > p, .post_body h3, .post_body h2 {
+		margin: 0 auto 0 100px;
+		max-width: 796px;
+	}
+	.post_image {
+		margin:0 auto;
+		max-height: 800px;
+	}
+	.lightbox {
+		justify-content: center;
+	}
+	.lightbox_content {
+		margin: 50px auto;
+		padding: 50px;
+		height: 100%;
+		max-height: calc(100vh - 100px);
+	}
+	.lightbox_content h2 {
+		margin-bottom: 4px;
+	}
+	.lightbox_content p {
+		margin-bottom: 24px;
+	}
+	.lightbox_close {
+		font-size: 36px;
+	}
+	.lightbox_image__container {
+		min-height: fit-content;
+		max-height: 100%;
+	}
+	.lightbox_image {
+		max-width: auto;
+		height: auto;
+		max-height: 100%;
+		padding: 0;
+	}
+}

@@ -30,12 +30,12 @@
 <!-- HOME -->
 <section class="home">
 	<div class="page_title">
-		<h1>welcome to kevin plunkett’s website on the world wide web!</h1>
+		<h1>I design digital products for wearables, mobile, and web.</h1>
 	</div>
 	<div class="about">
 		<p>
-			Over 10 years of experience designing digital products for <b>wearables, mobile, and web</b><br>
-			Lives in <b>Brooklyn NYC</b>, rides a <b>motorcycle</b>, cooks a mean <b>lasagna</b><br>
+			Most recently for the AR experiences team at <b><a href="https://www.meta.com">meta</a></b><br>
+			You can find me embedded in <b>Brooklyn NYC</b>, riding a <b>motorcycle</b>, or cooking a mean <b><a href="https://www.youtube.com/watch?v=REvgdLAte2w">lasagna</a></b><br>
 		</p>
 	</div>
 
@@ -52,8 +52,8 @@
 <!-- WORK -->
 <!-- WORK -->
 <!-- WORK -->
-	<section class="work" id="work">
-		{% if user.is_authenticated %}
+	{% if user.is_authenticated %}
+		<section class="work" id="work">
 				{% for post in posts|dictsortreversed:'year' %}
 					<div class="post_wrapper">
 						<div class="post_title">
@@ -82,8 +82,8 @@
 						</div>
 					</div>
 				{% endfor %}
-		{% endif %}
-	</section>
+		</section>
+	{% endif %}
 
 <!-- CONTACT -->
 <!-- CONTACT -->

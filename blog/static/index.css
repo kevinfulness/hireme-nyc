@@ -107,7 +107,6 @@ nav {
 	background-color: #4D415F;
 }
 .menu_content {
-	overflow-y: auto;
 }
 .work_nav__list {
 	padding: 0;
@@ -210,7 +209,7 @@ nav {
 		padding: 50px;
 	}
 	.menu_content {
-		padding: 200px 50px 50px;
+		margin: 200px 50px;
 		max-height: 100%;
 	}
 	.work_nav__item a {
@@ -284,7 +283,7 @@ nav {
 		padding: 50px;
 	}
 	.menu_content {
-		padding: 200px 50px 50px;
+		margin: 200px 50px;
 		max-height: 100%;
 	}
 	.work_nav__item a {
@@ -298,14 +297,15 @@ nav {
 /* DESKTOP __________________________________________________________________________________________ */
 @media only screen and (min-width: 993px) {
 	.site_content{
-		margin: 0 auto 50px 150px;
+		margin: 148px auto 0 150px;
 	}
 	.nav {
 		animation: none;
 	}
 	.home {
 		max-width: 100%;
-		margin-left: 0;
+		margin-left: 100px;
+		margin-right: 25px;
 	}
 	.links {
 		max-width: 796px;
@@ -350,8 +350,8 @@ nav {
 		padding: 50px;
 	}
 	.menu_content, .modal_content {
-		padding: 150px 0;
-		margin-left: 150px;
+		padding: 0;
+		margin: 150px;
 		max-height: 100%;
 	}
 	.menu_button, .modal_close {

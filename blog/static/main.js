@@ -11,9 +11,9 @@ $(document).ready(function(){
   $(".work_nav__item").click(function(){
     $(".menu").fadeOut(150);
   });
+
   // Contact Modal
   if (window.matchMedia("(min-width: 993px)").matches) {
-    $(".modal_content").css('top', '0');
     $("#contact_button").click(function(){
       $(".modal").fadeIn(150);
     });
@@ -21,7 +21,6 @@ $(document).ready(function(){
     $(".modal_close").click(function(){
       $(".menu").fadeOut(150);
       $(".modal").fadeOut(150);
-      $(".modal_content").animate({top: '0'}, 300);
     });
   } else {
     $(".modal_content").css('top', windowHeight);

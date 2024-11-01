@@ -79,6 +79,10 @@
 
 /* PHONE __________________________________________________________________________________________ */
 @media only screen and (max-width: 768px) {
+	.work {
+		gap: 50px;
+		margin-bottom: 50px;
+	}
 	.post_wrapper {
 		gap: 50px;
 	}
@@ -145,6 +149,7 @@
 @media only screen and (min-width: 769px) {
 	.work {
 		gap: 50px;
+		margin-bottom: 50px;
 	}
 	.post_wrapper {
 		margin-right: 25px;
@@ -208,6 +213,7 @@
 @media only screen and (min-width: 993px) {
 	.work {
 		gap: 100px;
+		margin-bottom: 100px;
 	}
 	.post_wrapper {
 		margin-right: 25px;
