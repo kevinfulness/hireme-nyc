@@ -28,7 +28,6 @@ section {
 	flex-direction: column;
 	justify-content: center;
 	max-width: 100%;
-	gap: 50px;
 }
 h1 {
 	text-transform:lowercase;
@@ -40,10 +39,10 @@ h1 {
 h1, h4, li, p {
 	font-weight: 400;
 }
-h2, button, .close, .post_meta__label {
+h2, button, .close {
 	font-weight: 600;
 }
-h3, .post_meta__eyebrow {
+h3, .post_meta__eyebrow, .post_meta__label {
 	font-weight: 700;
 }
 h3 {
@@ -62,9 +61,11 @@ button {
 	background-color: #C08EC2;
 	border-style: none;
 	transition: background-color 0.5s;
+	transition: color 0.5s;
 }
 button:hover {
 	background-color: #7E5181;
+	color: #E6E3E6;
 }
 .wrapper{
 	display: flex;
@@ -80,15 +81,22 @@ button:hover {
 
 /* PHONE __________________________________________________________________________________________ */
 @media only screen and (max-width: 768px) {
+	section {
+		gap: 24px;
+	}
 	.nav {
-		padding:20px;
+		padding:24px;
 	}	
 	.nav_logo, .nav_logo__light{
-		min-width:96px;
-		height:96px;
+		min-width:48px;
+		height:48px;
+	}
+	.nav h3 {
+		margin: 0;
 	}
 	button {
-		font-size: 48px;
+		font-size: 18px;
+		min-width: 100%;
 	}
 	h2, h4 {
 		font-size: 24px;
@@ -97,40 +105,41 @@ button:hover {
 		margin-top: 0;
 	}
 	h3 {
-		font-size: 32px;
+		font-size: 24px;
 	}
 	p {
-		font-size: 32px;
-		line-height: 72px;
+		font-size: 18px;
+		line-height: 36px;
 	}
 }
 
 /* TABLET __________________________________________________________________________________________ */
 @media only screen and (min-width: 769px) {
+	section {
+		gap: 24px;
+	}
 	.nav {
-		padding:50px;
+		padding:24px;
 	}
 	.nav_logo, .nav_logo__light{
-		min-width:96px;
-		height:96px;
+		min-width:56px;
+		height:56px;
 	}
 	button {
-		font-size: 48px;
-		border-radius: 25px;
-		padding: 25px 50px;
+		font-size: 18px;
 	}
 	h2, h4 {
-		font-size: 48px;
+		font-size: 24px;
 	}
 	h2 {
 		margin-top: 0;
 	}
 	h3 {
-		font-size: 32px;
+		font-size: 24px;
 	}
 	p {
-		font-size: 32px;
-		line-height: 72px;
+		font-size: 18px;
+		line-height: 36px;
 	}
 }
 
@@ -138,9 +147,10 @@ button:hover {
 @media only screen and (min-width: 993px) {
 	section {
 		min-height: calc(100vh - 300px);
+		gap: 48px;
 	}
 	.nav {
-		padding:50px;
+		padding:48px;
 	}
 	.nav_logo, .nav_logo__light {
 		min-width:48px;

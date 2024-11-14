@@ -15,6 +15,7 @@
 <nav class="nav">
 	<a href="/" class="nav_logo__link">
 		<div class="nav_logo"></div>
+		<div class="nav_name"><h3>Kevin Plunkett</h3></div>
 	</a>
 	{% if user.is_authenticated %}
 	<div class="right">
@@ -30,12 +31,12 @@
 <!-- HOME -->
 <section class="home">
 	<div class="page_title">
-		<h1>I design digital products for wearables, mobile, and web.</h1>
+		<h1>designing digital products for wearables, mobile, and web.</h1>
 	</div>
 	<div class="about">
 		<p>
-			Most recently for the AR experiences team at <b><a href="https://www.meta.com">meta</a></b><br>
-			You can find me embedded in <b>Brooklyn NYC</b>, riding a <b>motorcycle</b>, or cooking a mean <b><a href="https://www.youtube.com/watch?v=REvgdLAte2w">lasagna</a></b><br>
+			Most recently for the AR experiences team at <b>Meta Reality Labs</b><br>
+			You can find me embedded in <b><a href="https://vesuviobayridge.com/">Brooklyn NYC</a></b>, riding a <b>motorcycle</b>, or cooking a mean <b><a href="https://www.youtube.com/watch?v=REvgdLAte2w">lasagna</a></b><br>
 		</p>
 	</div>
 
@@ -54,34 +55,34 @@
 <!-- WORK -->
 	{% if user.is_authenticated %}
 		<section class="work" id="work">
-				{% for post in posts|dictsortreversed:'year' %}
-					<div class="post_wrapper">
-						<div class="post_title">
-							<h1 id="{{ post.title }}">{{ post.title }}</h1>
+			{% for post in posts|dictsortreversed:'year' %}
+				<div class="post_wrapper">
+					<div class="post_title">
+						<h1 id="{{ post.title }}">{{ post.title }}</h1>
+					</div>
+					<div class="post_meta">
+						<div class="post_meta__item">
+							<span class="post_meta__eyebrow">Company</span>
+							<span class="post_meta__label">{{ post.company }}</span>
 						</div>
-						<div class="post_meta">
-							<div class="post_meta__item">
-								<span class="post_meta__eyebrow">Company</span>
-								<span class="post_meta__label">{{ post.company }}</span>
-							</div>
-							<div class="post_meta__item">
-								<span class="post_meta__eyebrow">Year</span>
-								<span class="post_meta__label">{{post.year }}</span>
-							</div>
-							<div class="post_meta__item">
-								<span class="post_meta__eyebrow">Role</span>
-								<span class="post_meta__label">{{ post.role }}</span>
-							</div>
-							<div class="post_meta__item">
-								<span class="post_meta__eyebrow">Surface</span>
-								<span class="post_meta__label">{{ post.surface }}</span>
-							</div>
+						<div class="post_meta__item">
+							<span class="post_meta__eyebrow">Year</span>
+							<span class="post_meta__label">{{post.year }}</span>
 						</div>
-						<div class="post_body">
-							{{ post.body | safe }}
+						<div class="post_meta__item">
+							<span class="post_meta__eyebrow">Role</span>
+							<span class="post_meta__label">{{ post.role }}</span>
+						</div>
+						<div class="post_meta__item">
+							<span class="post_meta__eyebrow">Surface</span>
+							<span class="post_meta__label">{{ post.surface }}</span>
 						</div>
 					</div>
-				{% endfor %}
+					<div class="post_body">
+						{{ post.body | safe }}
+					</div>
+				</div>
+			{% endfor %}
 		</section>
 	{% endif %}
 

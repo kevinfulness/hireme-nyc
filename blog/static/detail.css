@@ -9,9 +9,9 @@
 	flex-direction: column;
 }
 .post_meta {
-	display: flex;
 	flex-direction: row;
-	gap: 100px;
+	display: flex;
+	gap: 96px;
 	max-width: 100%;
 }
 .post_meta__item {
@@ -20,7 +20,7 @@
 	gap: 12px;
 }
 .post_body {
-	gap: 25px;
+	gap: 24px;
 }
 .post_body > p,.post_body > h3, .post_body > h2 {
 	box-sizing: border-box;
@@ -31,7 +31,7 @@
 	width: fit-content;
 	max-width: 1515px;
 	overflow: hidden;
-	padding: 25px;
+	padding: 24px;
 }
 .post_image {
 	width: auto;
@@ -70,7 +70,7 @@
 	float: right;
 	font-weight: bold;
 	line-height: 0;	
-	margin: 0 0 25px auto;
+	margin: 0 0 24px auto;
 }
 .lightbox_close:hover, .lightbox_close:focus {
 	text-decoration: none;
@@ -80,34 +80,37 @@
 /* PHONE __________________________________________________________________________________________ */
 @media only screen and (max-width: 768px) {
 	.work {
-		gap: 50px;
-		margin-bottom: 50px;
+		gap: 48px;
+		margin-bottom: 48px;
 	}
 	.post_wrapper {
-		gap: 50px;
+		gap: 48px;
 	}
 	.post_wrapper {
-		margin-right: 25px;
+		margin-right: 0;
 	}
 	.post_title {
-		margin: 0 0 0 50px;
+		margin: 0;
 		max-width:100%;
 		padding: 0;
 	}
 	.post_title h1 {
-		font-size:96px;
+		font-size:48px;
 		margin: 0;
 	}	
 	.post_meta {
 		margin: 0;
 		flex-wrap: wrap;
-		gap: 50px;
+		gap: 42px 24px;
+	}
+	.post_meta__item {
+		gap: 6px;
 	}
 	.post_meta__eyebrow {
-		font-size: 24px;
+		font-size: 10px;
 	}
 	.post_meta__label {
-		font-size: 36px;
+		font-size: 14px;
 	}
 	.post_body h3, .post_body h2 {
 		margin: 0 0 24px;
@@ -115,17 +118,20 @@
 	.post_body p {
 		margin: 0;
 	}
+	.post_body > div {
+		padding: 12px;
+	}
 	.post_image {
-		margin:50px auto;
+		margin:0 auto;
 		max-height: 400px;
 	}
 	.lightbox {
 		justify-content: flex-end;
 	}
 	.lightbox_content {
-		margin: 25px auto;
-		padding: 50px;
-		max-height: calc(100vh - 50px);
+		margin: 24px auto;
+		padding: 48px;
+		max-height: calc(100vh - 48px);
 	}
 	.lightbox_content h2 {
 		font-size: 48px;
@@ -148,39 +154,42 @@
 /* TABLET __________________________________________________________________________________________ */
 @media only screen and (min-width: 769px) {
 	.work {
-		gap: 50px;
-		margin-bottom: 50px;
+		gap: 96px;
+		margin-bottom: 48px;
 	}
 	.post_wrapper {
-		margin-right: 25px;
-		gap: 100px;
+		margin-right: 24px;
+		gap: 48px;
 	}
 	.post_title {
-		margin: 0;
+		margin: 0 48px;
 		max-width:100%;
 	}
 	.post_title h1{
-		font-size:96px;
+		font-size:64px;
 	}	
 	.post_meta {
-		margin: 0;
+		margin: 0 48px;
 		flex-wrap: wrap;
-		gap: 50px;
+		gap: 42px;
+	}
+	.post_meta__item {
+		gap: 10px;
 	}
 	.post_meta__eyebrow {
-		font-size: 24px;
+		font-size: 12px;
 	}
 	.post_meta__label {
-		font-size: 36px;
+		font-size: 18px;
 	}
 	.post_body h3, .post_body h2 {
-		margin: 0 0 24px;
+		margin: 0 48px 24px 48px;
 	}
 	.post_body p {
-		margin: 0;
+		margin: 0 48px;
 	}
 	.post_image {
-		margin:50px auto;
+		margin:0 auto;
 		max-height: 600px;
 	}
 	.lightbox {
@@ -205,34 +214,35 @@
 	.lightbox_image {
 		max-width: auto;
 		min-height: 100%;
-		padding: 0 50px;
+		padding: 0 48px;
 	}
 }
 
 /* DESKTOP __________________________________________________________________________________________ */
 @media only screen and (min-width: 993px) {
 	.work {
-		gap: 100px;
-		margin-bottom: 100px;
+		gap: 96px;
+		margin-bottom: 96px;
 	}
 	.post_wrapper {
-		margin-right: 25px;
-		gap: 25px;
+		margin-right: 24px;
+		gap: 24px;
 	}
 	.post_title {
-		margin: 0 auto 0 100px;
-		max-width: 100%;
+		margin: 0 auto 0 96px;
+		max-width: 800px;
 	}
 	.post_title h1 {
 		font-size:56px;
 	}
 	.post_meta {
-		margin: 25px auto 25px 100px;
-		max-width: 100%;
-	}
-	.post_meta {
 		flex-wrap: nowrap;
-		gap: 50px;
+		gap: 48px;
+		margin: 24px auto 24px 96px;
+		max-width: 800px;
+	}
+	.post_meta__item {
+		gap: 12px;
 	}
 	.post_meta__eyebrow {
 		font-size: 12px;
@@ -241,8 +251,8 @@
 		font-size: 18px;
 	}
 	.post_body > p, .post_body h3, .post_body h2 {
-		margin: 0 auto 0 100px;
-		max-width: 796px;
+		margin: 0 auto 0 96px;
+		max-width: 800px;
 	}
 	.post_image {
 		margin:0 auto;
@@ -252,10 +262,10 @@
 		justify-content: center;
 	}
 	.lightbox_content {
-		margin: 50px auto;
-		padding: 50px;
+		margin: 48px auto;
+		padding: 48px;
 		height: 100%;
-		max-height: calc(100vh - 100px);
+		max-height: calc(100vh - 96px);
 	}
 	.lightbox_content h2 {
 		margin-bottom: 4px;
