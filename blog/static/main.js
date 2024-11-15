@@ -2,7 +2,7 @@ $(document).ready(function(){
   var windowHeight = $(window).height();
   var windowBottom = (windowHeight * -1)/2 + 50;
 
-  $(".post_wrapper").find('img').addClass("post_image");
+  $(".post_body").find('img').addClass("post_image");
 
   // Menu
   $(".menu_button").click(function(){

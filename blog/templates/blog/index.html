@@ -61,20 +61,10 @@
 						<h1 id="{{ post.title }}">{{ post.title }}</h1>
 					</div>
 					<div class="post_meta">
-						<div class="post_meta__item">
-							<span class="post_meta__eyebrow">Company</span>
-							<span class="post_meta__label">{{ post.company }}</span>
-						</div>
-						<div class="post_meta__item">
-							<span class="post_meta__eyebrow">Year</span>
+						<img class="post_meta__logo" role="img" alt="{{ post.company }}" src="/static/images/logo-{{ post.logo }}.svg"></img>
+						<div class="post_meta__text">
 							<span class="post_meta__label">{{post.year }}</span>
-						</div>
-						<div class="post_meta__item">
-							<span class="post_meta__eyebrow">Role</span>
 							<span class="post_meta__label">{{ post.role }}</span>
-						</div>
-						<div class="post_meta__item">
-							<span class="post_meta__eyebrow">Surface</span>
 							<span class="post_meta__label">{{ post.surface }}</span>
 						</div>
 					</div>
