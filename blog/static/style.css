@@ -7,10 +7,10 @@ html {
 .page_title, h4, .post_meta__eyebrow, .post_meta__label {
 	color:#7E5181;
 }
-a,p, h1, h2, h3, li, button, .nav, .nav__name, .post_wrapper, .close, .lightbox_close:hover, .lightbox_close:focus {
+a,p, h1, h2, h3, li, button:hover, .nav, .nav__name, .post_wrapper, .close, .lightbox_close:hover, .lightbox_close:focus {
 	color:#4D415F;
 }
-.menu li a, .modal h2, .modal p, .modal_title h1 {
+.menu li a, .modal h2, .modal p, .modal_title h1, button {
 	color: #E6E3E6;
 }
 body, h2, h4, p, ul {
@@ -53,14 +53,13 @@ button {
 	padding: 10px 20px;
 	border-radius: 10px;
 	font-family:"Montserrat";
-	background-color: #C08EC2;
+	background-color: #7E5181;
 	border-style: none;
 	transition: background-color 0.5s;
 	transition: color 0.5s;
 }
 button:hover {
-	background-color: #7E5181;
-	color: #E6E3E6;
+	background-color: #C08EC2;
 }
 .wrapper{
 	display: flex;

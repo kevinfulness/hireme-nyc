@@ -39,7 +39,6 @@ nav {
 .nav {
 	backdrop-filter: blur(0px);
 	background-color: rgba(77,65,95,0);
-	animation: navbg 0.25s linear;
 	animation-delay: calc(var(--scroll) * -1s);
 	animation-play-state: paused;
 	animation-iteration-count: 1;
@@ -83,11 +82,6 @@ nav {
 	background-image:url(/static/images/logo.svg);
 	background-size:100%;
 	background-position:center;
-	animation: logo 0.25s linear;
-	animation-delay: calc(var(--scroll) * -1s);
-	animation-play-state: paused;
-	animation-iteration-count: 1;
-	animation-fill-mode: both;
 }
 @keyframes logo {
 	0% {
@@ -102,7 +96,6 @@ nav {
 }
 .nav_name h3 {
 	color: #4D415F;
-	animation: navname 0.25s linear;
 	animation-delay: calc(var(--scroll) * -1s);
 	animation-play-state: paused;
 	animation-iteration-count: 1;
@@ -127,11 +120,6 @@ nav {
 	background-image:url(/static/images/menu.svg);
 	background-size:100%;
 	background-position:center;
-	animation: navbutton 0.25s linear;
-	animation-delay: calc(var(--scroll) * -1s);
-	animation-play-state: paused;
-	animation-iteration-count: 1;
-	animation-fill-mode: both;
 }
 @keyframes navbutton {
 	0% {
@@ -214,6 +202,24 @@ nav {
 
 /* PHONE __________________________________________________________________________________________ */
 @media only screen and (max-width: 768px) {
+	.nav {
+		animation: navbg 0.25s linear;
+	}
+	.nav_logo{
+		animation: logo 0.25s linear;
+	}
+	.nav_name h3 {
+		animation: navname 0.25s linear;
+	}
+	.menu_button {
+		animation: navbutton 0.25s linear;
+	}
+	.nav, .nav_logo, .nav_name h3, .menu_button {
+		animation-delay: calc(var(--scroll) * -1s);
+		animation-play-state: paused;
+		animation-iteration-count: 1;
+		animation-fill-mode: both;
+	}
 	.site_content {
 		margin: 144px 12px 24px;
 		max-width: 100vw;
@@ -283,6 +289,24 @@ nav {
 
 /* TABLET __________________________________________________________________________________________ */
 @media only screen and (min-width: 769px) {
+	.nav {
+		animation: navbg 0.25s linear;
+	}
+	.nav_logo{
+		animation: logo 0.25s linear;
+	}
+	.nav_name h3 {
+		animation: navname 0.25s linear;
+	}
+	.menu_button {
+		animation: navbutton 0.25s linear;
+	}
+	.nav, .nav_logo, .nav_name h3, .menu_button {
+		animation-delay: calc(var(--scroll) * -1s);
+		animation-play-state: paused;
+		animation-iteration-count: 1;
+		animation-fill-mode: both;
+	}
 	.site_content {
 		margin: 144px 48px 48px;
 		max-width: 100vw;
@@ -354,6 +378,9 @@ nav {
 
 /* DESKTOP __________________________________________________________________________________________ */
 @media only screen and (min-width: 993px) {
+	.nav, .nav_logo, .nav_name h3, .menu_button {
+		animation: none;
+	}
 	.site_content{
 		margin: 148px 50px 48px;
 	}

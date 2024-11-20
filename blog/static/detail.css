@@ -28,7 +28,6 @@
 }
 .post_meta__logo {
 	margin:0;
-	height: 18px;
 	min-width: fit-content;
 }
 .post_body {
@@ -41,9 +40,10 @@
 	width: 100%;
 }
 .post_body > div {
+	margin: 0 auto;
 	background-color: #4D415F;
 	height: fit-content;
-	width: 100%;
+	width: fit-content;
 	max-width: 1515px;
 	overflow: hidden;
 	padding: 24px;
@@ -94,7 +94,7 @@
 /* PHONE __________________________________________________________________________________________ */
 @media only screen and (max-width: 768px) {
 	.work {
-		gap: 48px;
+		gap: 72px;
 		margin-bottom: 48px;
 	}
 	.post_wrapper {
@@ -114,6 +114,9 @@
 		margin: 0 12px 24px;
 		gap: 42px 24px;
 	}
+	.post_meta__logo {
+		height: 18px;
+	}
 	.post_meta__text {
 		gap: 24px;
 	}
@@ -132,6 +135,9 @@
 	.post_body > div {
 		padding: 12px;
 		overflow-x: auto;
+	}
+	.post_body > div {
+		width: 100%;
 	}
 	.post_image {
 		margin:0 auto;
@@ -185,6 +191,9 @@
 		margin: 0 48px 48px;
 		gap: 36px;
 	}
+	.post_meta__logo {
+		height: 18px;
+	}
 	.post_meta__text {
 		gap: 36px;
 	}
@@ -199,6 +208,9 @@
 	}
 	.post_body h3, .post_body h2, .post_body p {
 		margin: 0 48px;
+	}
+	.post_body > div {
+		width: 100%;
 	}
 	.post_image {
 		margin:0 auto;
@@ -234,7 +246,7 @@
 /* DESKTOP __________________________________________________________________________________________ */
 @media only screen and (min-width: 993px) {
 	.work {
-		gap: 96px;
+		gap: 128px;
 		margin-bottom: 96px;
 	}
 	.post_wrapper {
@@ -255,6 +267,9 @@
 		max-width: 800px;
 		width: 100%;
 	}
+	.post_meta__logo {
+		height: 24px;
+	}
 	.post_meta__text {
 		gap: 48px;
 	}
@@ -271,10 +286,13 @@
 		margin: 0 auto;
 		max-width: 800px;
 	}
+	.post_body > div {
+		width: fit-content;
+	}
 	.post_image {
 		margin:0 auto;
 		max-height: 800px;
-		max-width: 100%;
+		max-width: 1000px;
 	}
 	.lightbox {
 		justify-content: center;
