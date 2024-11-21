@@ -1,27 +1,22 @@
-<!-- blog/templates/blog/index.html -->
-
-{% extends "base.html" %}
-{% load static %}
-{% block styles %}
-	<link rel="stylesheet" href="{% static "work.css" %}" />
-{% endblock styles %}
-
-{% block page_content %}
-
-<div class="posts_list">
-		{% for post in posts|dictsortreversed:'year' %}
-		<a href="{% url 'blog_detail' post.pk %}">
-			<div class="post_item">
-				<div class="post_thumbnail"><img class="post_thumbnail__image" src="{{ post.thumbnail }}" /></div>
+<section class="work" id="work">
+	{% for post in posts|dictsort:'position' %}
+		<div class="post_wrapper">
+			<div class="post_header">
+				<div class="post_title">
+					<h1 id="{{ post.title }}">{{ post.title }}</h1>
+				</div>
 				<div class="post_meta">
-					<h2>{{ post.title }}</h2>
-					<p>{{ post.company }} {{post.year }}</p>
-					<p>{{ post.role }}</p>
-					<p>{{ post.surface }}</p>
+					<img class="post_meta__logo" role="img" alt="{{ post.company }}" src="/static/images/logo-{{ post.logo }}.svg"></img>
+					<div class="post_meta__text">
+						<span class="post_meta__label">{{post.year }}</span>
+						<span class="post_meta__label">{{ post.role }}</span>
+						<span class="post_meta__label">{{ post.surface }}</span>
+					</div>
 				</div>
 			</div>
-		</a>
-		{% endfor %}
-</div>
-
-{% endblock page_content %}
+			<div class="post_body">
+				{{ post.body | safe }}
+			</div>
+		</div>
+{% endfor %}
+</section>

@@ -1,0 +1,20 @@
+<section class="work" id="work">
+	{% for post in posts|dictsortreversed:'year' %}
+		<div class="post_wrapper">
+			<div class="post_title">
+				<h1 id="{{ post.title }}">{{ post.title }}</h1>
+			</div>
+			<div class="post_meta">
+				<img class="post_meta__logo" role="img" alt="{{ post.company }}" src="/static/images/logo-{{ post.logo }}.svg"></img>
+				<div class="post_meta__text">
+					<span class="post_meta__label">{{post.year }}</span>
+					<span class="post_meta__label">{{ post.role }}</span>
+					<span class="post_meta__label">{{ post.surface }}</span>
+				</div>
+			</div>
+			<div class="post_body">
+				{{ post.body | safe }}
+			</div>
+		</div>
+	{% endfor %}
+</section>
