@@ -42,17 +42,18 @@
 }
 .post_body > div {
 	margin: 0 auto;
-	background-color: #4D415F;
 	height: fit-content;
 	width: fit-content;
 	max-width: 1515px;
-	overflow: hidden;
 	padding: 24px;
 }
 .post_image {
 	width: auto;
 	height: auto;
 	cursor: pointer;
+	border: 12px solid #4D415F;
+	border-radius: 30px;
+	box-shadow: 0 0 50px;
 }
 .image_row {
 	display: flex;
@@ -319,12 +320,11 @@
 	}
 	.post_image {
 		margin:0 auto;
-		max-height: 800px;
 		max-width: 1000px;
 	}
 	.image_row {
 		flex-direction: row;
-		gap: 48px;
+		gap: 24px;
 	}
 	.lightbox {
 		justify-content: center;
