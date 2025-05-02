@@ -48,6 +48,7 @@
 	padding: 24px;
 }
 .post_image {
+	box-sizing: border-box;
 	width: auto;
 	height: auto;
 	cursor: pointer;
@@ -57,6 +58,7 @@
 }
 .image_row {
 	display: flex;
+	flex-wrap: wrap;
 }
 .lightbox {
 	display: none;
@@ -144,15 +146,12 @@
 	}
 	.post_body > div {
 		padding: 12px;
-		overflow-x: auto;
-	}
-	.post_body > div {
 		width: 100%;
 	}
 	.post_image {
 		margin:0 auto;
 		max-height: 400px;
-		max-width: fit-content;
+		max-width: 100%;
 	}
 	.image_row {
 		flex-direction: column;
