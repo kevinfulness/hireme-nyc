@@ -433,8 +433,9 @@ nav {
 	}
 	.menu_content, .modal_content {
 		padding: 0;
-		margin: 144px;
+		margin: 144px auto;
 		max-height: 100%;
+		max-width: 800px;
 	}
 	.menu_button, .modal_close {
 		width: 22px;
