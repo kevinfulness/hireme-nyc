@@ -1,7 +1,6 @@
 //all
 
 //desktop
-set nav bg animation to trigger at work section
 
 //tablet
 

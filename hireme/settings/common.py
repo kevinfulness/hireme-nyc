@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'storages',
-    'django_feather',
 ]
 
 MIDDLEWARE = [
