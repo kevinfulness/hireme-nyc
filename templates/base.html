@@ -7,7 +7,10 @@
 	<title>Kevin Plunkett | Product Designer</title>
 	{% load static %}
 	<link rel='preconnect' href='https://fonts.googleapis.com' crossorigin>
-	<link rel="preload"  as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100..900&display=swap">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100..900&display=swap">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
 	<link rel="stylesheet" href="{% static "style.css" %}" />
 	{% block styles %}{% endblock %}
@@ -16,7 +19,7 @@
 	<link rel="icon" href="{% static "images/favicon.ico" %}" type="image/x-icon" />
 </head>
 <body bgcolor="#d9d1d9">
-<div class="wrapper">	
+<div class="wrapper">
 		{% block page_content %}{% endblock page_content %}
 </div>
 </body>

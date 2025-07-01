@@ -1,26 +1,67 @@
 @font-face{
 	font-family:'Montserrat'
+} 
+@font-face {
+	font-family: 'Advent Pro';
+}
+:root {
+    --light-urple: #7E5181;
+    --dark-urple: #4D415F;
+    --lightest-urple: #C08EC2;
+    --greysh: #E6E3E6;
 }
 html {
   scroll-behavior: smooth;
+	/* scroll-snap-type: y mandatory; */
 }
-.page_title h1, h4, .post_meta__eyebrow, .post_meta__label {
-	color:#7E5181;
+h1, h2, h3, h4, .work_link, .nav_item a, .nav_item a, .nav_work__item a, .post_meta__label, .post_meta__eyebrow, button {
+	font-family: 'Advent Pro';
+	text-transform: uppercase;
 }
-a,p, h1, h2, h3, li, button:hover, .nav, .nav__name, .post_wrapper, .close, .lightbox_close:hover, .lightbox_close:focus {
-	color:#4D415F;
+p, input, textarea {
+	font-family: 'Montserrat';
 }
-.menu li a, .modal h2, .modal p, .modal_title h1, button {
-	color: #E6E3E6;
+a:hover, button:hover {
+	color: var(--lightest-urple);
 }
-body, h2, h4, p, ul {
+h1, h4, .post_meta__eyebrow, .post_meta__label, .nav_item a {
+	color: var(--light-urple);
+}
+a,p, h2, h3, li, button,input, textarea, .nav, .logo_name, .post_wrapper {
+	color:var(--dark-urple);
+}
+.modal h2, .modal p, .modal_title h1 {
+	color: var(--greysh);
+}
+.page_title h1{
+	font-weight: 300;
+	letter-spacing: 1rem;
+}
+.logo_name h3, .nav_item a, .nav_work__item a, .post_title h1, .post_meta__eyebrow, .post_meta__label {
+	font-weight: 500;
+}
+h1, h4, p, input, textarea {
+	font-weight: 400;
+}
+h2, .close {
+	font-weight: 600;
+}
+.work_link, .selected > a, button {
+	font-weight: 800;
+}
+.nav_item a, .nav_item a, .nav_work__item a {
+	letter-spacing: 10px;
+}
+a {
+	text-decoration: none;
+}
+body, h1, h2, h4, p, ul {
 	margin: 0;
 }
 body{
 	padding:0;
 	width:100%;
 	height:100%;
-	font-family:"Montserrat";
 	overflow-x: hidden;
 }
 section {
@@ -29,39 +70,14 @@ section {
 	justify-content: center;
 	max-width: 100%;
 }
-h1 {
-	text-transform:lowercase;
-	margin: 0;
-}
-h1, h4, li, p {
-	font-weight: 400;
-}
-h2, button, .close {
-	font-weight: 600;
-}
-h3, .post_meta__eyebrow, .post_meta__label {
-	text-transform: uppercase;
-	font-weight: 700;
-}
 ul{
 	padding-left:20px;
 }
-a {
-	text-decoration: none;
-}
-button {
-	padding: 10px 20px;
-	border-radius: 10px;
-	font-family:"Montserrat";
-	background-color: #7E5181;
-	border-style: none;
+a, button {
 	transition: background-color 0.5s;
 	transition: color 0.5s;
 }
-button:hover {
-	background-color: #C08EC2;
-}
-.wrapper{
+.wrapper {
 	display: flex;
 	flex-direction: column;
 	margin:0;
@@ -69,8 +85,15 @@ button:hover {
 	height: 100%;
 	min-height: 100vh;
 	box-sizing: border-box;
-	background-image: linear-gradient(45deg, #E6E3E6, #B7A1B8);
+	background-image: linear-gradient(135deg, #D3CFEB, #FED6DF);
 	background-attachment:fixed;
+}
+button {
+	background: none;
+	border: none;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
 }
 
 /* PHONE __________________________________________________________________________________________ */
@@ -78,19 +101,15 @@ button:hover {
 	section {
 		gap: 24px;
 	}
-	.nav {
-		padding:24px;
-	}	
-	.nav_logo, .nav_logo__light{
-		min-width:48px;
-		height:48px;
+	.logo_name h3 {
+		font-size: 18px;
 	}
 	.nav h3 {
 		margin: 0;
 	}
 	button {
 		font-size: 18px;
-		min-width: 100%;
+		min-height: 48px;
 	}
 	h2, h4 {
 		font-size: 24px;
@@ -98,8 +117,8 @@ button:hover {
 	h2 {
 		margin-top: 0;
 	}
-	h3 {
-		font-size: 24px;
+	.nav_item a, .nav_work__item a {
+		font-size: 14px;
 	}
 	p {
 		font-size: 18px;
@@ -112,12 +131,11 @@ button:hover {
 	section {
 		gap: 24px;
 	}
-	.nav {
-		padding:24px;
+	.nav_work {
+		margin: 8px 0 12px 0;
 	}
-	.nav_logo, .nav_logo__light{
-		min-width:56px;
-		height:56px;
+	.logo_name h3 {
+		font-size: 18px;
 	}
 	button {
 		font-size: 18px;
@@ -128,8 +146,8 @@ button:hover {
 	h2 {
 		margin-top: 0;
 	}
-	h3 {
-		font-size: 24px;
+	.nav_item a, .nav_work__item a {
+		font-size: 14px;
 	}
 	p {
 		font-size: 18px;
@@ -144,17 +162,14 @@ button:hover {
 		min-height: calc(100vh - 300px);
 		gap: 48px;
 	}
-	.nav {
-		padding:48px;
+	.logo_name h3 {
+		font-size: 18px;
 	}
-	.nav_logo, .nav_logo__light {
-		min-width:48px;
-		height:48px;
+	.nav_work {
+		margin: 8px 0 12px 0;
 	}
 	button {
 		font-size: 18px;
-		border-radius: 10px;
-		padding: 10px 20px;
 	}
 	h2, h4 {
 		font-size: 24px;
@@ -162,11 +177,45 @@ button:hover {
 	h2 {
 		margin-top: 0;
 	}
-	h3 {
-		font-size: 18px;
+	.nav_item a, .nav_work__item a {
+		font-size: 14px;
 	}
 	p {
+		font-size: 14px;
+		line-height: 24px;
+	}
+}
+
+/* LARGE DESKTOP __________________________________________________________________________________________ */
+@media only screen and (min-width: 1740px) {
+	section {
+		margin: 0 auto;
+		min-height: calc(100vh - 300px);
+		gap: 48px;
+	}
+	.nav {
+		padding:48px;
+	}
+	.nav_name h3 {
 		font-size: 18px;
-		line-height: 36px;
+	}
+	.nav_work {
+		margin: 8px 0 12px 0;
+	}
+	button {
+		font-size: 18px;
+	}
+	h2, h4 {
+		font-size: 24px;
+	}
+	h2 {
+		margin-top: 0;
+	}
+	.nav_item a, .nav_work__item a {
+		font-size: 14px;
+	}
+	p {
+		font-size: 14px;
+		line-height: 24px;
 	}
 }

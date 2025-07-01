@@ -52,7 +52,7 @@
 	margin: 0 0 25px auto;
 }
 .lightbox_close:hover, .lightbox_close:focus {
-	color:#4D415F;
+	color:var(--dark-urple);
 	text-decoration: none;
 	cursor: pointer;
 }

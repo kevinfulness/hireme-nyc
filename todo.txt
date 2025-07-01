@@ -1,3 +1,8 @@
-breakpoints
-full-width scrolling
-export & upload images
+//all
+
+//desktop
+set nav bg animation to trigger at work section
+
+//tablet
+
+//mobile

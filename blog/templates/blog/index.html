@@ -9,17 +9,22 @@
 
 {% block page_content %}
 
+<a href="/" class="logo_link">
+	<div class="logo"></div>
+	<div class="logo_name"><h3>Kevin Plunkett</h3></div>
+</a>
 <!-- NAV -->
 <!-- NAV -->
 <!-- NAV -->
 <nav class="nav">
-	<a href="/" class="nav_logo__link">
-		<div class="nav_logo"></div>
-		<div class="nav_name"><h3>Kevin Plunkett</h3></div>
-	</a>
-	<div class="right">
-		<div class="menu_button"></div>
-	</div>
+	<div class="nav_item" id="nav_item__work"><a href="#work">work</a></div>
+	<ul class="nav_work">
+		{% for post in posts|dictsortreversed:'year' %}
+		<li class="nav_work__item"><a href="#{{ post.title }}">{{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
+	<!--form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">log out</button></form-->
+	<div class="nav_item" id="nav_item__contact"><a href="#contact">contact</a></div>
 </nav>
 
 <div class="site_content">
@@ -27,21 +32,19 @@
 <!-- HOME -->
 <!-- HOME -->
 <!-- HOME -->
-<section class="home">
+<section class="home" id="home">
 	<div class="page_title">
 		<h1>designing digital products for wearables, mobile, and web.</h1>
 	</div>
 	<div class="about">
 		<p>
-			Most recently at <b>Google Maps</b><br>
-			You can find me embedded in <b><a href="https://vesuviobayridge.com/">Brooklyn NYC</a></b>, riding a <b>motorcycle</b>, or cooking a mean <b><a href="https://www.youtube.com/watch?v=REvgdLAte2w">lasagna</a></b><br>
+			Most recently at <b><a href="https://play.google.com/store/apps/details?hl=en_US&id=com.google.android.apps.maps" target="new">Google Maps</a></b><br>
+			You can find me posted up in <b><a href="https://vesuviobayridge.com/" target="new">Brooklyn NYC</a></b>, riding a <b>motorcycle</b>, or cooking a mean <b><a href="https://www.youtube.com/watch?v=REvgdLAte2w" target="new">lasagna</a></b><br>
 		</p>
 	</div>
+	{% load icon %}
+	<a class="work_link" href="#work">see the work<img src="{% static 'images/chevron-down.svg' height="12" width="12" %}"></a>
 
-	<div class="links">
-		<a href="#work"><button id="work_button">see the work</button></a>
-		<button id="contact_button">get in touch</button>
-	</div>
 </section>
 
 <!-- WORK -->
@@ -52,55 +55,25 @@
 <!-- CONTACT -->
 <!-- CONTACT -->
 <!-- CONTACT -->
-<div class="modal">
-	{% include "blog/menu_nav.html" %}
-	<section class="modal_content">
-		<div class="modal_copy">
-			<div class="modal_title">
-				<h1>Get in touch</h1>
-			</div>
-			<p>Send me a message and I’ll respond as soon as possible!</p>
-		</div>
-		<div id="form_success" style="display: none;"><h2>Success!</h2></div>
-		<form action="https://api.web3forms.com/submit" method="POST" id="contact_form">
-		    <input type="hidden" name="access_key" value="3f3a091c-6fdb-4c81-95bc-9001b3d42ab6">
-		    <input type="text" placeholder="Name" name="name" required>
-		    <input type="email" placeholder="Email address" name="email">
-			<input type="phone" placeholder="Phone number" name="phone">
-			<textarea placeholder="Message" name="message" required></textarea>
-		    <!-- Honeypot Spam Protection -->
-		    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-		    <!-- Custom Confirmation / Success Page -->
-		    <input type="hidden" name="redirect" value="thanks.html">
-			<button type="submit" id="send_button">Send</button>
-		</form>		
-	</section>
-</div>
-
-<!-- LIGHTBOX -->
-<!-- LIGHTBOX -->
-<!-- LIGHTBOX -->
-<div class="lightbox">
-	{% include "blog/menu_nav.html" %}
-	<div class="lightbox_content">
-		<div class="lightbox_image__container"></div>
+<section id="contact">
+	<div class="post_title">
+		<h1>Get in touch</h1>
 	</div>
-</div>
-
-<!-- MENU -->
-<!-- MENU -->
-<!-- MENU -->
-<div class="menu">
-	{% include "blog/menu_nav.html" %}
-	<section class="menu_content">
-		<ul class="work_nav__list">
-		{% for post in posts|dictsortreversed:'year' %}
-			<li class="work_nav__item"><a href="#{{ post.title }}">{{ post.title }}</a></li>
-		{% endfor %}
-		</ul>
-		<!--form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">log out</button></form-->
-	</section>
-</div>
+	<p>Send me a message and I’ll respond as soon as possible!</p>
+	<div id="form_success" style="display: none;"><h2>Success!</h2></div>
+	<form action="https://api.web3forms.com/submit" method="POST" id="contact_form">
+	    <input type="hidden" name="access_key" value="3f3a091c-6fdb-4c81-95bc-9001b3d42ab6">
+	    <input type="text" placeholder="Name" name="name" required>
+	    <input type="email" placeholder="Email address" name="email">
+		<input type="phone" placeholder="Phone number" name="phone">
+		<textarea placeholder="Message" name="message" required></textarea>
+	    <!-- Honeypot Spam Protection -->
+	    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+	    <!-- Custom Confirmation / Success Page -->
+	    <input type="hidden" name="redirect" value="thanks.html">
+		<button type="submit" id="send_button">Send<img src="{% static 'images/chevron-right.svg' height="12" width="12" %}"></button>
+	</form>		
+</section>
 
 </div>
 

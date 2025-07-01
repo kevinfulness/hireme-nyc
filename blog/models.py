@@ -12,7 +12,9 @@ class Post(models.Model):
     logo = models.CharField(max_length=255, null=True)
     role = models.CharField(max_length=255, null=True)
     surface = models.CharField(max_length=255, null=True)
-    body = RichTextUploadingField(blank=True, null=True)
+    body = models.CharField(max_length=1024, blank=True, null=True)
+    image = models.CharField(max_length=255, null=True)
+    link = models.CharField(max_length=255, blank=True, null=True)
     position = models.CharField(max_length=3, null=True)
 
     def __str__(self):

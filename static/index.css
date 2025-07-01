@@ -9,18 +9,18 @@ input, textarea {
 	outline: none;
 	font-weight: 400;
 	font-family:"Montserrat";
-	color: #4D415F;
-	background-color: #FFF;
+	color: var(--dark-urple);
+	background-color: white;
 	border: none;
 }
 input:focus, textarea:focus {
-	border: 2px solid #C08EC2;
+	border: 2px solid var(--lightest-urple);
 }
 input[name="username"] {
 	display: none;
 }
 input::placeholder, textarea::placeholder {
-	color: #C08EC2;
+	color: var(--lightest-urple);
 }
 label {
 	display: none;
@@ -58,7 +58,7 @@ label {
 		line-height: 0;
 }
 .close:hover, .close:focus {
-	color:#4D415F;
+	color:var(--dark-urple);
 	text-decoration: none;
 	cursor: pointer;
 }

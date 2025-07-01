@@ -2,10 +2,10 @@
 	font-family:'Montserrat'
 }
 .page_title, h4 {
-	color:#7E5181;
+	color:var(--light-urple);
 }
 a,p, h2, .nav, .nav__name, .post_wrapper, .close {
-	color:#4D415F;
+	color:var(--dark-urple);
 }
 body{
 	margin:0;
@@ -107,7 +107,7 @@ ul{
 }
 li{
 	margin-bottom: 16px;
-	color: #4D415F;
+	color: var(--dark-urple);
 	font-size: 18px;
 	font-weight: 400;
 }
@@ -132,18 +132,18 @@ input, textarea {
 	outline: none;
 	font-weight: 400;
 	font-family:"Montserrat";
-	color: #4D415F;
-	background-color: #FFF;
+	color: var(--dark-urple);
+	background-color: white;
 	border: none;
 }
 input:focus, textarea:focus {
-	border: 2px solid #C08EC2;
+	border: 2px solid var(--lightest-urple);
 }
 input[name="username"] {
 	display: none;
 }
 input::placeholder, textarea::placeholder {
-	color: #C08EC2;
+	color: var(--lightest-urple);
 }
 label {
 	display: none;
@@ -153,13 +153,13 @@ button {
 	border-radius: 10px;
 	font-weight: 600;
 	font-family:"Montserrat";
-	color: #4D415F;
-	background-color: #C08EC2;
+	color: var(--dark-urple);
+	background-color: var(--lightest-urple);
 	border-style: none;
 	transition: background-color 0.5s;
 }
 button:hover {
-	background-color: #7E5181;
+	background-color: var(--light-urple);
 }
 .form_wrapper > button[type="submit"] {
 	max-width: 640px;
@@ -248,7 +248,7 @@ button:hover {
 		line-height: 0;
 }
 .close:hover, .close:focus {
-	color:#4D415F;
+	color:var(--dark-urple);
 	text-decoration: none;
 	cursor: pointer;
 }
