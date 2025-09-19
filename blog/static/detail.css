@@ -329,7 +329,7 @@
 	}
 	.post_meta__text {
 		gap: 12px;
-		flex-direction: column;
+		flex-direction: row;
 	}
 	.post_meta__label {
 		font-size: 14px;
@@ -337,6 +337,7 @@
 	}
 	.post_body {
 		margin-top: 8px;
+		flex-direction: column;
 	}
 	.post_body p {
 		margin: 0;
@@ -346,7 +347,7 @@
 		margin:0 auto;
 		border: 8px solid var(--dark-urple);
 	}
-	
+
 	.lightbox {
 		justify-content: center;
 	}
