@@ -7,17 +7,18 @@
 						<h1 id="{{ post.title }}">{{ post.title }}</h1>
 					</div>
 					<div class="post_meta">
-						<img class="post_meta__logo" role="img" alt="{{ post.company }}" src="/static/images/logo-{{ post.logo }}.svg" />
+						<!--img class="post_meta__logo" role="img" alt="{{ post.company }}" src="/static/images/logo-{{ post.logo }}.svg" /-->
 						<div class="post_meta__text">
-							<span class="post_meta__label">{{post.year }}</span>
+							<span class="post_meta__label">{{post.company }}</span>
+							<!--span class="post_meta__label">{{post.year }}</span-->
 							<span class="post_meta__label">{{ post.role }}</span>
 							<span class="post_meta__label">{{ post.surface }}</span>
-							{% if post.link %}<a class="work_link" href="{{ post.link }}">visit site<img src="static/images/chevron-right.svg" height="12" width="12" %}"></a>{% endif %}
 						</div>
 					</div>
 				</div>
 				<div class="post_body">
 					<p>{{ post.body | safe }}</p>
+					{% if post.link %}<a class="work_link" href="{{ post.link }}">visit site<img src="static/images/chevron-right.svg" height="12" width="12" %}"></a>{% endif %}
 				</div>
 			</div>
 			<img src="{{ post.image | safe }}" class="post_image" />

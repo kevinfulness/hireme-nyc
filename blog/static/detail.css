@@ -300,10 +300,10 @@
 		gap: 48px;
 	}
 	.post_header, .post_body {
-		margin: 0 auto;
 		max-width: 442px;
 	}
 	.post_header {
+		margin: 0 auto;
 		gap: 24px;
 	}
 	.post_title {
@@ -334,6 +334,9 @@
 	.post_meta__label {
 		font-size: 14px;
 		letter-spacing: .5em;
+	}
+	.post_body {
+		margin-top: 8px;
 	}
 	.post_body p {
 		margin: 0;

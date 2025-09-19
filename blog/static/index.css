@@ -269,6 +269,8 @@ a > img, button > img {
 	.nav_item {
 		width: auto;
 		cursor: pointer;
+		display: flex;
+		align-items: center;
 	}
 	.site_content{
 		margin: 0 50px 48px;
