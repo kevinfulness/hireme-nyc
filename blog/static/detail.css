@@ -300,10 +300,10 @@
 		gap: 48px;
 	}
 	.post_header, .post_body {
-		max-width: 442px;
+		max-width: 100%;
 	}
 	.post_header {
-		margin: 0 auto;
+		margin: 0;
 		gap: 24px;
 	}
 	.post_title {
@@ -321,7 +321,7 @@
 		gap: 24px;
 		margin: 0;
 		flex-direction: row;
-		align-items: start;
+		align-items: center;
 		justify-content: flex-start;
 	}
 	.post_meta__logo {
