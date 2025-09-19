@@ -32,6 +32,7 @@
 	flex-wrap: wrap;
 	align-items: start;
 	justify-content: flex-start;
+	flex-direction: row;
 }
 .post_meta__item {
 	display: flex;
@@ -44,6 +45,7 @@
 }
 .post_body {
 	gap: 24px;
+	flex-direction: column;
 }
 .post_body > p,.post_body > h3, .post_body > h2, .post_body > div {
 	box-sizing: border-box;
@@ -145,7 +147,6 @@
 	}
 	.post_meta__text {
 		gap: 12px 24px;
-		flex-direction: row;
 	}
 	.post_meta__item {
 		gap: 6px;
@@ -237,7 +238,6 @@
 	}
 	.post_meta__text {
 		gap: 12px;
-		flex-direction: row;
 	}
 	.post_meta__item {
 		gap: 10px;
@@ -329,7 +329,6 @@
 	}
 	.post_meta__text {
 		gap: 12px;
-		flex-direction: row;
 	}
 	.post_meta__label {
 		font-size: 14px;
@@ -337,7 +336,6 @@
 	}
 	.post_body {
 		margin-top: 8px;
-		flex-direction: column;
 	}
 	.post_body p {
 		margin: 0;
