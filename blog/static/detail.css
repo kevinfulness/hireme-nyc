@@ -296,7 +296,9 @@
 	.post_text {
 		flex-direction: column;
 		flex-wrap: wrap;
-		flex: 1 0 0;
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 0;
 		gap: 24px;
 	}
 	.post_header, .post_body {
