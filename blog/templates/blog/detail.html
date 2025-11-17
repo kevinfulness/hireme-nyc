@@ -2,16 +2,62 @@
 
 {% extends "base.html" %}
 {% load static %}
+
 {% block styles %}
-	<link rel="stylesheet" href="{% static "detail.css" %}" />
+	<link rel="stylesheet" href="{% static "work.css" %}" />
 {% endblock styles %}
 
 {% block page_content %}
 
-<h1 class="page_title">{{ post.title }}</h1>
+<section class="detail">
+	{% for post in posts|dictsort:'position' %}
+	<div class="post_wrapper">
 
-<div class="post_wrapper">
-	{{ post.body | safe }}
-</div>
+		<div class="post_overview">
+			<div class="post_overview__text">
+				<h3>{{ post.title | safe }}</h3>
+
+				{% if post.link %}<a class="work_link" href="{{ post.link }}">visit site<img src="static/images/chevron-right.svg" height="12" width="12" %}"></a>{% endif %}
+			</div>
+			<div class="post_meta">
+				<div class="post_meta__text">
+					<!--span class="post_meta__label">{{post.year }}</span-->
+					<span class="post_meta__label">{{ post.role }}</span>
+					<span class="post_meta__label">{{ post.surface }}</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="post_text">
+			<div class="text_group">
+				<h3>challenge</h3>
+				<p>Google Maps list-making requires manual saving, sorting, and note taking. Users who are researching places for an outing or trip need to manually search for places, create a list, add notes and a title before sharing with friends. The challenge was to simplify this process into a single prompt using Gemini.</p>
+			</div>
+			<div class="text_group">
+				<h3>considerations</h3>
+				<p>While the possibilities of AI prompting are endless, we were under a time crunch -- leadership wanted a working PoC in dogfood in 3 months. </p>
+			</div>
+		</div>
+
+		<div class="post_gallery">
+			<img src="{{ post.image | safe }}" class="post_image" />
+		</div>
+
+		<div class="post_text">
+			<div class="text_group">
+				<h3>solution</h3>
+				<p>After insights from some rapid user testing, we refined early concepts into an input module on the You Tab (home of saves & lists). We let suggestion chips do some user education heavy lifting, reducing visual noise while providing real-world use-cases for the tool. When prompted, the tool would return an unsaved list, ready for user customization, with AI generated emoji, title, hero image, description, and notes.</p>
+			</div>
+			<div class="text_group">
+				<h3>impact</h3>
+				<p>Me and a small xfn team took this tool from 0 to Googe-wide dogfood in 3 months. We used dogfood as an additional source of user insights, while pushing towards a general release. Meanwhile, the product provides a jumping off point for additional Gen AI features.</p>
+			</div>
+		</div>
+
+	</div>
+{% endfor %}
+</section>
+
+
 
 {% endblock page_content %}

@@ -1,114 +1,6 @@
-.work {
-	display: flex;
-	flex-direction: column;
-}
-.post_wrapper {
-/*	scroll-snap-align: start; */
-	height: 100vh;
-}
-.post_wrapper, .post_text, .post_body, .post_header {
-/*	width: 100%;*/
-	position: relative;
-	display: flex;
-	align-items: flex-start;
-}
-.post_header, .post_body {
-	flex-grow: 1;
-}
-.post_header {
-	flex-direction: column;
-}
-.post_title h1 {
-	letter-spacing: 1rem;
-}
-.post_meta {
-	display: flex;
-	flex: 1 0 1;
-
-	flex-wrap: wrap;
-}
-.post_meta__text {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: start;
-	justify-content: flex-start;
-	flex-direction: row;
-}
-.post_meta__item {
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-}
-.post_meta__logo {
-	margin:0;
-	min-width: fit-content;
-}
-.post_body {
-	gap: 24px;
-	flex-direction: column;
-}
-.post_body > p,.post_body > h3, .post_body > h2, .post_body > div {
-	box-sizing: border-box;
-}
-.post_body h3{
-	width: 100%;
-}
-.post_body > div {
-	margin: 0 auto;
-	height: fit-content;
-	width: fit-content;
-	max-width: 1515px;
-	padding: 24px;
-}
-.post_image {
-	box-sizing: border-box;
-	width: auto;
-	height: auto;
-	cursor: pointer;
-	border-radius: 30px;
-	box-shadow: 0 0 50px;
-}
-.lightbox {
-	display: none;
-	position: fixed;
-	flex-direction: column;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--dark-urple);
-}
-.lightbox_content {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	width: fit-content;
-	max-width: 100%;
-	box-sizing: border-box;
-	justify-content: center;
-	overflow: auto;
-}
-.lightbox_image__container {
-	max-height: 100%;
-}
-.lightbox_image {
-	width: auto;
-}
-.lightbox_close {
-	float: right;
-	font-weight: bold;
-	line-height: 0;	
-	margin: 0 0 24px auto;
-}
-.lightbox_close:hover, .lightbox_close:focus {
-	text-decoration: none;
-	cursor: pointer;
-}
-
 /* PHONE __________________________________________________________________________________________ */
 @media only screen and (max-width: 768px) {
-	.work {
+	.detail {
 		gap: 72px;
 		margin-bottom: 48px;
 	}
@@ -279,9 +171,10 @@
 	}
 }
 
+
 /* DESKTOP __________________________________________________________________________________________ */
 @media only screen and (min-width: 993px) {
-	.work {
+	.detail {
 		gap: 128px;
 		margin-bottom: 96px;
 	}
@@ -313,11 +206,10 @@
 		width: 100%;
 	}
 	.post_title h1 {
-		font-size: 64px;
+		font-size: 48px;
 		font-style: normal;
 		font-weight: 500;
 		line-height: normal;
-		text-transform: uppercase;
 	}
 	.post_meta {
 		gap: 24px;

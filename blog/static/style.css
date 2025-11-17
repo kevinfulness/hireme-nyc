@@ -14,11 +14,11 @@ html {
   scroll-behavior: smooth;
 	/* scroll-snap-type: y mandatory; */
 }
-h1, h2, h3, h4, .work_link, .nav_item a, .nav_item a, .nav_work__item a, .post_meta__label, .post_meta__eyebrow, button {
+h2, h3, h4, .work_link, .nav_item a, .nav_item a, .nav_work__item a, .post_meta__label, .post_meta__eyebrow, button {
 	font-family: 'Advent Pro';
 	text-transform: uppercase;
 }
-p, input, textarea {
+h1, p, input, textarea {
 	font-family: 'Montserrat';
 }
 a:hover, button:hover {
@@ -33,17 +33,13 @@ a,p, h2, h3, li, button,input, textarea, .nav, .logo_name, .post_wrapper {
 .modal h2, .modal p, .modal_title h1 {
 	color: var(--greysh);
 }
-.page_title h1{
-	font-weight: 300;
-	letter-spacing: 1rem;
-}
-.logo_name h3, .nav_item a, .nav_work__item a, .post_title h1, .post_meta__eyebrow, .post_meta__label {
+.logo_name h3, .nav_item a, .nav_work__item a, .post_title h1, .post_meta__eyebrow {
 	font-weight: 500;
 }
 h1, h4, p, input, textarea {
 	font-weight: 400;
 }
-h2, .close {
+h2, .close, p > a, .post_meta__label {
 	font-weight: 600;
 }
 .work_link, .selected > a, button {
@@ -111,6 +107,9 @@ button {
 		font-size: 18px;
 		min-height: 48px;
 	}
+	.page_title h1{
+		font-weight: 400;
+	}
 	h2, h4 {
 		font-size: 24px;
 	}
@@ -174,6 +173,9 @@ button {
 	h2, h4 {
 		font-size: 24px;
 	}
+	.page_title h1{
+		font-weight: 300;
+	}
 	h2 {
 		margin-top: 0;
 	}
@@ -191,7 +193,7 @@ button {
 	section {
 		margin: 0 auto;
 		min-height: calc(100vh - 300px);
-		gap: 48px;
+		gap: 24px;
 	}
 	.nav {
 		padding:48px;
@@ -204,6 +206,9 @@ button {
 	}
 	button {
 		font-size: 18px;
+	}
+	.page_title h1{
+		font-weight: 300;
 	}
 	h2, h4 {
 		font-size: 24px;

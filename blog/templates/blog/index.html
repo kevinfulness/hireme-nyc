@@ -4,7 +4,7 @@
 {% load static %}
 {% block styles %}
 	<link rel="stylesheet" href="{% static "index.css" %}" />
-	<link rel="stylesheet" href="{% static "detail.css" %}" />
+	<link rel="stylesheet" href="{% static "work.css" %}" />
 {% endblock styles %}
 
 {% block page_content %}
@@ -34,12 +34,11 @@
 <!-- HOME -->
 <section class="home" id="home">
 	<div class="page_title">
-		<h1>designing digital products for wearables, mobile, and web.</h1>
+		<h1>focused on creating simple, intuitive digital experiences.</h1>
 	</div>
 	<div class="about">
 		<p>
-			Most recently at <b><a href="https://play.google.com/store/apps/details?hl=en_US&id=com.google.android.apps.maps" target="new">Google Maps</a></b><br>
-			You can find me posted up in <b><a href="https://vesuviobayridge.com/" target="new">Brooklyn NYC</a></b>, riding a <b>motorcycle</b>, or cooking a mean <b><a href="https://www.youtube.com/watch?v=REvgdLAte2w" target="new">lasagna</a></b><br>
+			Most recently at <a href="https://play.google.com/store/apps/details?hl=en_US&id=com.google.android.apps.maps" target="new">Google Maps.</a> Previously at <a href="https://www.meta.com/" target="new">Meta Reality Labs</a>, <a href="https://www.bethesda.net/" target="new">Bethesda Softworks</a>, <a href="https://www.msg.com/" target="new">Madison Square Garden</a>, <a href="https://www.livestream.com/" target="new">Livestream</a>, and <a href="https://www.dailyburn.com/" target="new">Daily Burn.</a>
 		</p>
 	</div>
 	<a class="work_link" href="#work">see the work<img src="{% static 'images/chevron-down.svg' height="12" width="12" %}"></a>
@@ -50,7 +49,6 @@
 <!-- WORK -->
 <!-- WORK -->
 	{% include "blog/work.html" %}
-
 </div>
 
 {% endblock page_content %}
