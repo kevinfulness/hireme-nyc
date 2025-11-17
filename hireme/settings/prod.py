@@ -1,6 +1,6 @@
 from .common import *
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'hireme-nyc-500432b446dc.herokuapp.com',
@@ -49,9 +49,10 @@ AWS_S3_VERITY = True
 AWS_QUERYSTRING_AUTH = False
 
 # Static files (CSS, JavaScript, Images)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_LOCATION = 'static'
-STATIC_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/static/'
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
+STATIC_ROOT = "staticfiles"  # still required for collectstatic run before upload
 
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')

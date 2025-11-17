@@ -1,0 +1,83 @@
+$font: 'Montserrat'
+
+h1, h2, h4, p, ul
+	margin: 0
+
+body
+	font-family: $font
+
+h1
+	text-transform:lowercase
+
+h3, .post_meta__eyebrow
+	text-transform: uppercase
+
+h1, h4, li, p, input, textarea
+	font-weight: 400
+
+h2, button, .close, .post_meta__label 
+	font-weight: 600
+
+h3, .post_meta__eyebrow
+	font-weight: 700
+
+ul
+	padding-left: 20px
+
+a
+	text-decoration: none
+
+/* PHONE __________________________________________________________________________________________ */
+@media only screen and (max-width: 768px)
+	.page_title h1, .modal_title h1, .post_title h1
+		font-size: 96px
+	.work_nav__item a
+		font-size: 64px
+	button, .lightbox_content h2
+		font-size: 48px
+	.lightbox_content h2
+		margin-bottom: 8px
+	.post_meta__label
+		font-size: 36px
+	h3, p
+		font-size: 32px
+	h2, h4, .post_meta__eyebrow
+		font-size: 24px
+	input, textarea
+		font-size: 18px
+	p
+		line-height: 72px
+	
+/* TABLET __________________________________________________________________________________________ */
+@media only screen and (min-width: 769px)
+	.page_title h1, .modal_title h1
+		font-size: 96px
+
+	.work_nav__item a
+		font-size: 64px
+
+	input, textarea
+		font-size: 56px
+
+	button, h2, h4
+		font-size: 48px
+
+	h3, p
+		font-size: 32px
+
+	p
+		line-height: 72px
+
+/* DESKTOP __________________________________________________________________________________________ */
+@media only screen and (min-width: 993px)
+	.page_title h1, .modal_title h1
+		font-size:56px	
+		padding: 0
+	.work_nav__item a 
+		font-size: 48px
+	h2, h4
+		font-size: 24px
+	button, h3, p, input, textarea
+		font-size: 18px
+	p
+		line-height: 36px
