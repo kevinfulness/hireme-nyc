@@ -159,7 +159,7 @@ a > img, button > img {
 		display: none;
 	}
 	.site_content {
-		margin: 144px 12px 24px;
+		margin: 144px 0 24px;
 		max-width: 100vw;
 	}
 	.logo_name h3 {
@@ -167,15 +167,13 @@ a > img, button > img {
 	}
 	#home {
 		max-width: 100%;
-		margin: 0 12px;
+		margin: 0 24px;
 	}
 	.about {
 		max-width: 100%;
-		margin: 0;
 	}
 	.page_title {
 		max-width:100%;
-		margin:0;
 	}
 	.page_title h1 {
 		font-size:48px;
@@ -220,8 +218,12 @@ a > img, button > img {
 		height: 24px;
 	}
 	.site_content {
-		margin: 0 48px 48px;
-		max-width: 100vw;
+		margin: 0 0 48px;
+		max-width: 100%;
+		width: 100%;
+		padding: 0;
+		box-sizing: border-box;
+		overflow-x: hidden;
 	}
 	#home {
 		max-width: 100%;
@@ -273,7 +275,8 @@ a > img, button > img {
 		align-items: center;
 	}
 	.site_content{
-		margin: 0 50px 48px;
+		margin: 0 0 48px;
+		padding: 0 50px;
 	}
 	#home {
 		width: 100%;

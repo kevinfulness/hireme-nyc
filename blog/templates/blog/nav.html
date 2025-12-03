@@ -1,0 +1,18 @@
+<a href="/" class="logo_link">
+	<div class="logo"></div>
+	<div class="logo_name"><h3>Kevin Plunkett</h3></div>
+</a>
+<!-- NAV -->
+<!-- NAV -->
+<!-- NAV -->
+<nav class="nav">
+	<div class="nav_item" id="nav_item__work"><a href="#work">work</a></div>
+	<ul class="nav_work">
+		{% for brand in brands %}
+		<li class="nav_work__item"><a href="{% url 'brand_detail' brand.pk %}">{{ brand.name }}</a></li>
+		{% endfor %}
+	</ul>
+	<!--form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">log out</button></form-->
+	<div class="nav_item" id="nav_item__contact"><a href="https://www.linkedin.com/in/kevinplunkett/">contact</a></div>
+</nav>
+

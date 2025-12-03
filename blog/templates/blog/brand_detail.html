@@ -1,0 +1,70 @@
+<!-- blog/templates/blog/brand_detail.html -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "index.css" %}" />
+<link rel="stylesheet" href="{% static "work.css" %}" />
+{% endblock styles %}
+
+{% block page_content %}
+
+{% include "blog/nav.html" %}
+
+<div class="site_content">
+
+<section class="work" id="brand">
+	<div class="post_wrapper">
+		<div class="post_text">
+			<div class="post_header">
+				<div class="page_title">
+					<h1>{{ brand.name }}</h1>
+				</div>
+			</div>
+			<div class="post_body">
+				<p>{{ brand.body | safe }}</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="work" id="work">
+	{% for post in posts|dictsort:'position' %}
+		<div class="post_wrapper">
+			<div class="post_text">
+				<h3>{{ post.title }}</h3>
+				<div class="post_header">
+					<div class="post_title">
+						<h1 id="{{ post.title }}">{{ post.headline }}</h1>
+					</div>
+				</div>
+				<div class="post_body">
+					<p>{{ post.body | safe }}</p>
+				</div>
+				<div class="post_meta">
+					<div class="post_meta__text">
+						<span class="post_meta__label">{{ post.surface }} // {{post.role }}</span>
+					</div>
+					{% if post.link %}<a class="work_link" href="{{ post.link }}">visit site <img src="static/images/chevron-right.svg" height="12" width="12"></a>{% endif %}
+				</div>
+			</div>
+			{% if post.image or post.image2 or post.image3 or post.image4 or post.image5 %}
+			<div class="post_images_container">
+				<div class="post_images_scroll">
+					{% if post.image %}<img src="{{ post.image | safe }}" class="post_image" />{% endif %}
+					{% if post.image2 %}<img src="{{ post.image2 | safe }}" class="post_image" />{% endif %}
+					{% if post.image3 %}<img src="{{ post.image3 | safe }}" class="post_image" />{% endif %}
+					{% if post.image4 %}<img src="{{ post.image4 | safe }}" class="post_image" />{% endif %}
+					{% if post.image5 %}<img src="{{ post.image5 | safe }}" class="post_image" />{% endif %}
+				</div>
+			</div>
+			{% endif %}
+		</div>
+	{% endfor %}
+</section>
+
+</div>
+
+{% endblock page_content %}
+
