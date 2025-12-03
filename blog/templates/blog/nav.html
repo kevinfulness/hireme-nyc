@@ -9,7 +9,7 @@
 	<div class="nav_item" id="nav_item__work"><a href="#work">work</a></div>
 	<ul class="nav_work">
 		{% for brand in brands %}
-		<li class="nav_work__item"><a href="{% url 'brand_detail' brand.pk %}">{{ brand.name }}</a></li>
+		<li class="nav_work__item"><a href="{% url 'brand_detail' brand.slug %}">{{ brand.name }}</a></li>
 		{% endfor %}
 	</ul>
 	<!--form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">log out</button></form-->

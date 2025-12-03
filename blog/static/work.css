@@ -4,6 +4,7 @@
 }
 #brand {
 	margin-top: 100px;
+	height: fit-content;
 }
 
 .post_wrapper, .post_text, .post_body, .post_header {
@@ -159,6 +160,9 @@
 		width: 100%;
 		gap: 24px;
 	}
+	.post_text h3 {
+		margin: 0 24px;
+	}
 	.post_header {
 		width: 100%;
 		margin: 0 auto;
@@ -260,6 +264,7 @@
 	}
 	#brand {
 		margin-top: 100px;
+		height: fit-content;
 	}
 	#brand .page_title {
 		margin: 0 48px;
@@ -371,7 +376,8 @@
 		margin-bottom: 0;
 	}
 	#brand {
-		margin-top: 0;
+		margin: 256px auto;
+		height: fit-content;
 	}
 	.post_wrapper {
 		align-items: center;

@@ -161,6 +161,9 @@ button {
 		min-height: calc(100vh - 300px);
 		gap: 48px;
 	}
+	#brand {
+		min-height: auto;
+	}
 	.logo_name h3 {
 		font-size: 18px;
 	}
@@ -194,6 +197,9 @@ button {
 		margin: 0 auto;
 		min-height: calc(100vh - 300px);
 		gap: 24px;
+	}
+	#brand {
+		min-height: auto;
 	}
 	.nav {
 		padding:48px;

@@ -5,13 +5,18 @@ from django.utils.text import slugify
 
 class Brand(models.Model):
     name = models.CharField(max_length=255)
+    slug = models.SlugField(blank=True, null=True, unique=True)
     body = models.CharField(max_length=1024, blank=True, null=True)
     image = models.CharField(max_length=255, blank=True, null=True)
     position = models.CharField(max_length=3, null=True)
 
-    
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if self.slug is None or self.slug == '':
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
 class Post(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='posts', null=True, blank=True)

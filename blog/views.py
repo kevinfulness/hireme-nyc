@@ -42,8 +42,8 @@ def blog_detail(request, pk):
             }
     return render(request, "blog/detail.html", context)
 
-def brand_detail(request, pk):
-    brand = Brand.objects.get(pk=pk)
+def brand_detail(request, slug):
+    brand = Brand.objects.get(slug=slug)
     posts = brand.posts.all()
     brands = Brand.objects.filter(posts__isnull=False).distinct()
     context = {
