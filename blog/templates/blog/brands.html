@@ -13,7 +13,7 @@
 				</div>
 				<div class="post_body">
 					<p>{{ brand.body | safe }}</p>
-					{% if brand.posts.all %}<a class="work_link" href="{% url 'brand_detail' brand.slug %}">More</a>{% endif %}
+					{% if brand.posts.all %}<a class="work_link" href="{% url 'brand_detail' brand.slug %}">More <img src="{% static 'images/chevron-right.svg' height="12" width="12" %}></a>{% endif %}
 				</div>
 			</div>
 			{% if brand.image %}<img src="{{ brand.image | safe }}" class="post_image" />{% endif %}
