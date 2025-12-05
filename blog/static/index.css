@@ -282,6 +282,7 @@ a > img, button > img {
 	.site_content{
 		margin: 0 0 48px;
 		padding: 0 50px;
+		overflow-x: visible;
 	}
 	#home {
 		width: 100%;
