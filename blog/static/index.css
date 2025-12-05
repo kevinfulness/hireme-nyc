@@ -155,6 +155,11 @@ a > img, button > img {
 		top: 12px;
 		left: 12px;
 	}
+	.logo_link.opaque {
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		background: rgba(255,255,255,0.6);
+	}
 	.nav {
 		display: none;
 	}

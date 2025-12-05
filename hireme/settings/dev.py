@@ -43,5 +43,7 @@ MEDIA_LOCATION = 'media'
 MEDIA_URL = 'media/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_UPLOAD_PREFIX = ''
+# Use local file storage for development
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 # DEFAULT_FILE_STORAGE = 'hireme.storage_backends.PublicMediaStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

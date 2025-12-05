@@ -45,12 +45,12 @@ $(document).ready(function(){
   });
 
   function handleScroll(){
-    const scrollTop = $(this).scrollTop();
-    const workTop = $('.work').offset().top;
+    const scrollTop = $(window).scrollTop();
+    const workTop = $('.work').offset();
     const logo = $('.logo_link');
 
     if (window.matchMedia("(min-width: 993px)").matches) {
-      if (scrollTop >= workTop - 128) {
+      if (workTop && scrollTop >= workTop.top - 128) {
         menu.addClass('opaque');
         logo.addClass('opaque');
       } else {

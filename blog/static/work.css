@@ -101,6 +101,13 @@
 	flex-shrink: 0;
 	height: auto;
 }
+.post_images_scroll video {
+	flex-shrink: 0;
+	height: auto;
+	border-radius: 30px;
+	box-shadow: 0 0 50px;
+	cursor: pointer;
+}
 .lightbox {
 	display: none;
 	position: fixed;

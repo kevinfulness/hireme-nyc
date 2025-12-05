@@ -49,17 +49,24 @@
 					{% if post.link %}<a class="work_link" href="{{ post.link }}">visit site <img src="/static/images/chevron-right.svg" height="12" width="12"></a>{% endif %}
 				</div>
 			</div>
-			{% if post.image or post.image2 or post.image3 or post.image4 or post.image5 %}
-			<div class="post_images_container">
-				<div class="post_images_scroll">
-					{% if post.image %}<img src="{{ post.image | safe }}" class="post_image" />{% endif %}
-					{% if post.image2 %}<img src="{{ post.image2 | safe }}" class="post_image" />{% endif %}
-					{% if post.image3 %}<img src="{{ post.image3 | safe }}" class="post_image" />{% endif %}
-					{% if post.image4 %}<img src="{{ post.image4 | safe }}" class="post_image" />{% endif %}
-					{% if post.image5 %}<img src="{{ post.image5 | safe }}" class="post_image" />{% endif %}
+			{% with media=post.get_all_media %}
+				{% if media %}
+				<div class="post_images_container">
+					<div class="post_images_scroll">
+						{% for item in media %}
+							{% if item.type == 'image' %}
+								<img src="{{ item.url | safe }}" class="post_image" />
+							{% elif item.type == 'video' %}
+								<video class="post_image" autoplay loop muted>
+									<source src="{{ item.url }}" type="video/mp4">
+									Your browser does not support the video tag.
+								</video>
+							{% endif %}
+						{% endfor %}
+					</div>
 				</div>
-			</div>
-			{% endif %}
+				{% endif %}
+			{% endwith %}
 		</div>
 	{% endfor %}
 </section>
