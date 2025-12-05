@@ -45,7 +45,6 @@ class PostAdminForm(ModelForm):
     class Meta:
         model = Post
         fields = '__all__'
-        exclude = ['image', 'image2', 'image3', 'image4', 'image5']
 
 class BrandAdmin(admin.ModelAdmin):
     pass
@@ -53,6 +52,20 @@ class BrandAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     form = PostAdminForm
     inlines = [MediaInline]
+    fieldsets = (
+        (None, {
+            'fields': ('brand', 'title', 'headline', 'slug', 'year', 'role', 'surface', 'body', 'link', 'position')
+        }),
+        ('Legacy Image Fields (can be cleared)', {
+            'fields': ('image', 'image2', 'image3', 'image4', 'image5'),
+            'classes': ('collapse',),
+            'description': 'These are legacy image fields. You can clear them if you\'ve migrated images to the Media model above.'
+        }),
+        ('Upload New Media', {
+            'fields': ('media_files',),
+            'description': 'Upload multiple images and videos here. They will be added to the Media section below.'
+        }),
+    )
     
     def save_model(self, request, obj, form, change):
         super().save_model(request, obj, form, change)
