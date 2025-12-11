@@ -57,7 +57,7 @@
 							{% if item.type == 'image' %}
 								<img src="{{ item.url | safe }}" class="post_image" />
 							{% elif item.type == 'video' %}
-								<video class="post_image" autoplay loop muted>
+								<video class="post_image" autoplay loop muted playsinline>
 									<source src="{{ item.url }}" type="video/mp4">
 									Your browser does not support the video tag.
 								</video>
