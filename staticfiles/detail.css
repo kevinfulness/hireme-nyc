@@ -1,0 +1,275 @@
+/* PHONE __________________________________________________________________________________________ */
+@media only screen and (max-width: 768px) {
+	.detail {
+		gap: 72px;
+		margin-bottom: 48px;
+	}
+	.post_wrapper {
+		flex-direction: column;
+		margin: 0 auto;
+		gap: 24px;
+	}
+	.post_text {
+		flex-direction: column;
+	}
+	.post_header {
+		width: 100%;
+		margin: 0 auto;
+		gap: 12px;
+	}	
+	.post_title {
+		width: auto;
+		margin: 0 12px;
+		max-width:100%;
+		padding: 0;
+	}
+	.post_title h1 {
+		font-size:32px;
+		margin: 0;
+	}	
+	.post_meta {
+		margin: 0 12px 24px;
+		gap: 24px;
+		flex-direction: column;
+		align-items: start;
+		justify-content: flex-start;
+	}
+	.post_meta__logo {
+		height: 48px;
+	}
+	.post_meta__text {
+		gap: 12px 24px;
+	}
+	.post_meta__item {
+		gap: 6px;
+	}
+	.post_meta__eyebrow {
+		font-size: 10px;
+	}
+	.post_meta__label {
+		font-size: 12px;
+	}
+	.post_body h3, .post_body h2, .post_body p {
+		margin: 0 12px;
+	}
+	.post_body > div {
+		padding: 12px;
+		width: 100%;
+	}
+	.post_image {
+		margin:0 auto;
+		max-height: 400px;
+		max-width: 100%;
+		border: 4px solid var(--dark-urple);
+	}
+	.image_row {
+		flex-direction: column;
+		gap: 24px;
+	}
+	.lightbox {
+		justify-content: flex-end;
+	}
+	.lightbox_content {
+		margin: 24px auto;
+		padding: 48px;
+		max-height: calc(100vh - 48px);
+	}
+	.lightbox_content h2 {
+		font-size: 48px;
+		margin-bottom: 8px;
+	}
+	.lightbox_content p {
+		margin-bottom: 48px;
+	}
+	.lightbox_close {
+		font-size: 28px;
+	}
+	.lightbox_image {
+		max-width: auto;
+	}
+	.lightbox_image__container {
+		width: 100%;
+	}
+}
+
+/* TABLET __________________________________________________________________________________________ */
+@media only screen and (min-width: 769px) {
+	.work {
+		gap: 96px;
+		margin-bottom: 48px;
+	}
+	.post_wrapper {
+		flex-direction: row;
+		margin: 0 auto;
+		gap: 24px;
+	}
+	.post_header {
+		margin: 0;
+		gap: 12px;
+	}
+	.post_text {
+		flex-direction: column;
+		gap: 24px;
+	}	
+	.post_title {
+		width: auto;
+		margin: 0;
+		max-width:100%;
+	}
+	.post_title h1{
+		font-size:42px;
+	}	
+	.post_meta {
+		gap: 12px;
+		flex-direction: column;
+		align-items: start;
+		justify-content: flex-start;
+	}
+	.post_meta__logo {
+		height: 48px;
+	}
+	.post_meta__text {
+		gap: 12px;
+	}
+	.post_meta__item {
+		gap: 10px;
+	}
+	.post_meta__label {
+		font-size: 14px;
+	}
+	.post_body p {
+		margin: 0;
+	}
+	.post_image {
+		margin:0 auto;
+		max-width: 300px;
+		border: 6px solid var(--dark-urple);
+	}
+	.lightbox {
+		justify-content: flex-end;
+	}
+	.lightbox_content {
+		margin: 0px auto;
+		height: 100%;
+		min-height: calc(100vh - 250px);
+	}
+	.lightbox_content h2 {
+		margin-bottom: 8px;
+	}
+	.lightbox_content p {
+		margin-bottom: 48px;
+	}
+	.lightbox_image__container {
+		width: 100%;
+		min-height: fit-content;
+		max-height: 100%;
+	}
+	.lightbox_image {
+		max-width: auto;
+		min-height: 100%;
+		padding: 0 48px;
+	}
+}
+
+
+/* DESKTOP __________________________________________________________________________________________ */
+@media only screen and (min-width: 993px) {
+	.detail {
+		gap: 128px;
+		margin-bottom: 96px;
+	}
+	.post_wrapper {
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
+		gap: 48px;
+	}
+	.post_text {
+		flex-direction: column;
+		flex-wrap: wrap;
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 0;
+		gap: 24px;
+	}
+	.post_header, .post_body {
+		max-width: 100%;
+	}
+	.post_header {
+		margin: 0;
+		gap: 12px;
+	}
+	.post_title {
+		margin: 0 auto;
+		width: 100%;
+	}
+	.post_title h1 {
+		font-size: 48px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+	.post_meta {
+		gap: 24px;
+		margin: 0;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	.post_meta__logo {
+		height: 36px;
+	}
+	.post_meta__text {
+		gap: 12px;
+	}
+	.post_meta__label {
+		font-size: 14px;
+		letter-spacing: .5em;
+	}
+	.post_body {
+		margin-top: 8px;
+	}
+	.post_body p {
+		margin: 0;
+	}
+	.post_image {
+		max-width: 300px;
+		margin:0 auto;
+		border: 8px solid var(--dark-urple);
+	}
+
+	.lightbox {
+		justify-content: center;
+	}
+	.lightbox_content {
+		margin: 48px auto;
+		padding: 48px;
+		height: 100%;
+		max-height: calc(100vh - 96px);
+	}
+	.lightbox_content h2 {
+		margin-bottom: 4px;
+	}
+	.lightbox_content p {
+		margin-bottom: 24px;
+	}
+	.lightbox_close {
+		font-size: 36px;
+	}
+	.lightbox_image__container {
+		min-height: fit-content;
+		max-height: 100%;
+	}
+	.lightbox_image {
+		max-width: auto;
+		height: auto;
+		max-height: 100%;
+		padding: 0;
+	}
+}
+/* LARGE DESKTOP __________________________________________________________________________________________ */
+@media only screen and (min-width: 1740px) {
+
+}

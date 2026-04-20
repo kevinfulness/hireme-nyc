@@ -1,5 +1,4 @@
 from pathlib import Path
-import django_heroku
 import dj_database_url
 import environ
 import sys
