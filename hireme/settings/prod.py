@@ -1,18 +1,21 @@
 from .common import *
 
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = [
-    'hireme-nyc-500432b446dc.herokuapp.com',
-    '.hireme.nyc',
-    'hireme.nyc',
-]
-
+ALLOWED_HOSTS = ['.hireme.nyc', 'hireme.nyc'] + os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True, default=os.environ['HEROKU_POSTGRESQL_PUCE_URL'])
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True, default=os.environ['DATABASE_URL'])
+# default=os.environ['HEROKU_POSTGRESQL_PUCE_URL']
 }
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+
+DATABASES = {
+    "default": dj_database_url.config(
+        default=os.environ.get("DATABASE_URL"),
+        conn_max_age=600,
+    )
+}
+# DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 
 #if 'ENGINE' in DATABASES['default'] and 'postgres' in DATABASES['default']['ENGINE']:
 #    DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
@@ -49,10 +52,12 @@ AWS_S3_VERITY = True
 AWS_QUERYSTRING_AUTH = False
 
 # Static files (CSS, JavaScript, Images)
-STATICFILES_STORAGE = "hireme.storage_backends.StaticStorage"
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
-STATIC_ROOT = "staticfiles"  # still required for collectstatic run before upload
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "hireme.storage_backends.StaticStorage"
+# STATIC_ROOT = "staticfiles"  # still required for collectstatic run before upload
 
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
