@@ -57,7 +57,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 MEDIA_LOCATION = 'media'
-MEDIA_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/media/'
+MEDIA_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_UPLOAD_PREFIX = 'https://hireme-image.s3.us-east-2.amazonaws.com/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
