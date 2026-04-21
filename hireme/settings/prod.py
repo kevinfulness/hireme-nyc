@@ -5,11 +5,6 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = ['.hireme.nyc', 'hireme.nyc'] + os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True, default=os.environ['DATABASE_URL'])
-# default=os.environ['HEROKU_POSTGRESQL_PUCE_URL']
-}
-
-DATABASES = {
     "default": dj_database_url.config(
         default=os.environ.get("DATABASE_URL"),
         conn_max_age=600,
