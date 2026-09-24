@@ -4,6 +4,16 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ['.hireme.nyc', 'hireme.nyc'] + os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
 
+# Behind Railway's TLS-terminating proxy: trust X-Forwarded-Proto so Django sees
+# requests as HTTPS, and allow the public origins for CSRF's Origin/Referer checks.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_TRUSTED_ORIGINS = [
+    'https://hireme.nyc',
+    'https://www.hireme.nyc',
+] + [o for o in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",") if o]
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 DATABASES = {
     "default": dj_database_url.config(
         default=os.environ.get("DATABASE_URL"),
