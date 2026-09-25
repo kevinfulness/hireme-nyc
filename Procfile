@@ -1,2 +1,1 @@
-release: python manage.py collectcss --noinput
-web: gunicorn hireme.wsgi:application --log-file - --log-level debug
+web: python manage.py collectstatic --noinput && gunicorn hireme.wsgi:application --log-file - --log-level debug

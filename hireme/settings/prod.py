@@ -58,11 +58,9 @@ AWS_QUERYSTRING_AUTH = False
 
 # Static files (CSS, JavaScript, Images)
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
-STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
+# Served by the app via WhiteNoise; collectstatic runs on each deploy (see Procfile)
+STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-# STATICFILES_STORAGE = "hireme.storage_backends.StaticStorage"
-# STATIC_ROOT = "staticfiles"  # still required for collectstatic run before upload
 
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
@@ -70,4 +68,10 @@ MEDIA_LOCATION = 'media'
 MEDIA_URL = 'https://hireme-image.s3.us-east-2.amazonaws.com/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_UPLOAD_PREFIX = 'https://hireme-image.s3.us-east-2.amazonaws.com/'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Django 5.1+ ignores DEFAULT_FILE_STORAGE / STATICFILES_STORAGE; STORAGES is the only setting read.
+# Uploads (admin media, CKEditor) go to S3; static files get hashed names so browsers pick up changes.
+STORAGES = {
+    "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
+    "staticfiles": {"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"},
+}
