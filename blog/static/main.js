@@ -45,30 +45,30 @@ $(document).ready(function(){
   });
 
   function handleScroll(){
-    const scrollTop = $(window).scrollTop();
-    const workTop = $('.work').offset();
     const logo = $('.logo_link');
+    let opaque = false;
 
-    if (window.matchMedia("(min-width: 993px)").matches) {
-      if (workTop && scrollTop >= workTop.top - 128) {
-        menu.addClass('opaque');
-        logo.addClass('opaque');
-      } else {
-        menu.removeClass('opaque');
-        logo.removeClass('opaque');
-      }
-    } else {
-      if (scrollTop >= 200) {
-        menu.addClass('opaque');
-        logo.addClass('opaque');
-      } else {
-        menu.removeClass('opaque');
-        logo.removeClass('opaque');
+    // Large desktop: nav sits clear of the content, so it stays transparent
+    // (the .expanded class still gives it a background when the menu is open)
+    if (!window.matchMedia("(min-width: 1740px)").matches) {
+      // Go opaque once the bottom of the fixed nav/logo reaches the headline
+      const target = $('.page_title h1')[0] || $('.work')[0];
+      if (target) {
+        const navBottom = Math.max(
+          ...$('.nav:visible, .logo_link:visible').map(function() {
+            return this.getBoundingClientRect().bottom;
+          }).get(),
+          0
+        );
+        opaque = target.getBoundingClientRect().top <= navBottom;
       }
     }
+
+    menu.toggleClass('opaque', opaque);
+    logo.toggleClass('opaque', opaque);
   }
 
-  $(window).on('scroll', handleScroll);
+  $(window).on('scroll resize', handleScroll);
   $(document).ready(handleScroll);
 
 });
